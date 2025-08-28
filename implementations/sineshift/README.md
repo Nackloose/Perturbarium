@@ -200,16 +200,6 @@ The test suite covers:
 - `numpy`: For numerical operations and FFT
 - `matplotlib`: For plotting (optional, used in tests)
 
-## Integration with EPStudio
-
-The SineShift module is designed to integrate with the EPStudio data processing pipeline:
-
-1. **Binary Data Processing**: Use mutators for any binary data transformation
-2. **Data Obfuscation**: Scramble data for secure storage and transmission
-3. **Analysis**: Generate comprehensive spectral and permutation reports
-4. **Research**: Advanced permutation technology for data security research
-5. **Key Management**: Manage infinite key space for data access control
-
 ## Version History
 
 - **1.0.0**: Initial implementation with permutation technology integration

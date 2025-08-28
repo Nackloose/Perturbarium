@@ -1,0 +1,50 @@
+
+theory SineScramble
+
+begin
+
+builtins: hashing
+
+// Type declarations for facts
+// Plaintext, Ciphertext, Key, KeyComponent, Index, Parameters, Score
+
+functions: encrypt/2, decrypt/2, score/3
+
+rule Encrypt:
+    [Plaintext(~p), Key(~k)]
+    --[Encrypt(~p, ~k)]->
+    [Ciphertext(encrypt(~p, ~k))]
+
+rule Decrypt:
+    [Ciphertext(~c), Key(~k)]
+    --[Decrypt(~c, ~k)]->
+    [Plaintext(decrypt(~c, ~k))]
+
+rule GenerateScore:
+    [KeyComponent(~key_comp), Index(~index), Parameters(~params)]
+    --[GenerateScore(~key_comp, ~index, ~params)]->
+    [Score(score(~key_comp, ~index, ~params))]
+
+lemma confidentiality:
+    "All p k #i.
+        Encrypt(p, k) @ #i
+        ==> not (Ex #j. K(p) @ #j)"
+
+lemma integrity:
+    "All p c k #i #j.
+        Encrypt(p, k) @ #i &
+        Decrypt(c, k) @ #j &
+        c = encrypt(p, k)
+        ==> #i < #j"
+
+lemma correctness:
+    "All p c k #i #j.
+        Encrypt(p, k) @ #i &
+        Decrypt(c, k) @ #j &
+        c = encrypt(p, k)
+        ==> p = decrypt(c, k)"
+
+end
+
+
+

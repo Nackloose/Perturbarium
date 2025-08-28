@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Spin Slots</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Highcharts CDN -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            overflow: auto;
+        }
+        .slot-machine {
+            background-color: #2d3748;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 0 5px rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            text-align: center;
+            max-width: 95%;
+            width: 1200px;
+            position: relative;
+            overflow: visible;
+        }
+        .game-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr 350px;
+            gap: 20px;
+            align-items: start;
+        }
+        .legend-panel {
+            background-color: #1a202c;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: left;
+        }
+        .game-panel {
+            background-color: #1a202c;
+            border-radius: 15px;
+            padding: 20px;
+        }
+        .stats-panel {
+            background-color: #1a202c;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: left;
+        }
+        .legend-title {
+            color: #e2e8f0;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .legend-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 5px 0;
+            border-bottom: 1px solid #4a5568;
+        }
+        .legend-symbol {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .legend-value {
+            color: #ecc94b;
+            font-weight: bold;
+        }
+        .combo-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #4a5568;
+        }
+        .combo-title {
+            color: #e2e8f0;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .combo-item {
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #cbd5e0;
+        }
+        .action-log {
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: #2d3748;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 15px;
+        }
+        .log-entry {
+            padding: 5px 0;
+            border-bottom: 1px solid #4a5568;
+            font-size: 12px;
+        }
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+        .log-win {
+            color: #48bb78;
+        }
+        .log-loss {
+            color: #f56565;
+        }
+        .skip-animation-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            gap: 8px;
+        }
+        .skip-animation-checkbox {
+            width: 18px;
+            height: 18px;
+            accent-color: #48bb78;
+        }
+        .skip-animation-label {
+            color: #cbd5e0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        @media (max-width: 1200px) {
+            .game-layout {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .slot-machine {
+                width: 99vw;
+                padding: 15px;
+            }
+        }
+        
+        /* Re-added styles for game elements */
+        .reel-container {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            perspective: 1000px;
+        }
+        .reel {
+            width: 70px;
+            height: 280px;
+            background-color: #1a202c;
+            border: 3px solid #4a5568;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .reel-symbols {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .reel-symbols span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+            height: 93px;
+            color: #ecc94b;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            position: absolute;
+            width: 100%;
+        }
+        .spin-button {
+            background: linear-gradient(145deg, #48bb78, #38a169);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .spin-button:hover:not(:disabled) {
+            background: linear-gradient(145deg, #38a169, #2f855a);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+        }
+        .spin-button:active:not(:disabled) {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .spin-button:disabled {
+            background: #4a5568;
+            cursor: not-allowed;
+            opacity: 0.7;
+            box-shadow: none;
+        }
+        .auto-spin-button {
+            background: linear-gradient(145deg, #ed8936, #dd6b20);
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .auto-spin-button:hover:not(:disabled) {
+            background: linear-gradient(145deg, #dd6b20, #c05621);
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+        }
+        .auto-spin-button:active:not(:disabled) {
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .auto-spin-button:disabled {
+            background: #4a5568;
+            cursor: not-allowed;
+            opacity: 0.7;
+            box-shadow: none;
+        }
+        .auto-spin-button.active {
+            background: linear-gradient(145deg, #f56565, #e53e3e);
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        .message-box {
+            background-color: #4a5568;
+            color: #cbd5e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 18px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            overflow-y: auto;
+        }
+        .message-box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .bet-button {
+            background-color: #63b3ed;
+            color: white;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .bet-button:hover:not(:disabled) {
+            background-color: #4299e1;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .bet-button:disabled {
+            background-color: #4a5568;
+            cursor: not-allowed;
+            opacity: 0.7;
+            box-shadow: none;
+        }
+        @keyframes throb {
+            0% { transform: scale(1); }
+            33% { transform: scale(1.2); }
+            66% { transform: scale(0.8); }
+            100% { transform: scale(1); }
+        }
+        .throb {
+            animation: throb 1s ease-in-out infinite;
+        }
+        /* Header Fixes */
+        .header-fixed {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(90deg, #2d3748 0%, #4a5568 100%);
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+            border: 1px solid #4a5568;
+        }
+        .header-section {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .header-divider {
+            width: 1px;
+            height: 2.5rem;
+            background: #4a5568;
+            margin: 0 1rem;
+        }
+        .chart-container {
+            background-color: #2d3748;
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .chart-title {
+            color: #e2e8f0;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slot-machine">
+        <div class="game-layout">
+            <!-- Left Column: Legend -->
+            <div class="legend-panel">
+                <div class="legend-title">Symbol Values</div>
+                <div id="symbol-legend"></div>
+                
+                <div class="combo-section">
+                    <div class="combo-title">Combo Multipliers</div>
+                    <div class="combo-item">• 3-Match Horizontal: 1x</div>
+                    <div class="combo-item">• 3-Match Vertical: 2x</div>
+                    <div class="combo-item">• 3-Match Diagonal: 2x</div>
+                    <div class="combo-item">• 5-Match Horizontal: 8x</div>
+                    <div class="combo-item">• V-Shape/A-Shape: 15x</div>
+                    <div class="combo-item">• All 15 Match: 500x</div>
+                </div>
+            </div>
+
+            <!-- Center Column: Game -->
+            <div class="game-panel">
+                <!-- Fixed Header with all controls -->
+                <div class="header-fixed">
+                    <!-- Left: Balance and Last Win -->
+                    <div class="header-section">
+                        <div class="flex flex-col items-center min-w-[80px]">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Balance</span>
+                            <span id="balance" class="text-xl font-bold text-green-400">$1000</span>
+                        </div>
+                        <div class="header-divider"></div>
+                        <div class="flex flex-col items-center min-w-[80px]">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Last Win</span>
+                            <span id="last-win" class="text-xl font-bold text-yellow-400">$0</span>
+                        </div>
+                    </div>
+                    <!-- Center: Bet Controls -->
+                    <div class="header-section">
+                        <button id="bet-minus" class="bet-button" style="min-width:2.5rem;">-</button>
+                        <div class="flex flex-col items-center px-2 min-w-[70px]">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Bet</span>
+                            <span class="text-xl font-bold text-blue-400">$<span id="current-bet">10</span></span>
+                        </div>
+                        <button id="bet-plus" class="bet-button" style="min-width:2.5rem;">+</button>
+                    </div>
+                    <!-- Right: Spin Buttons -->
+                    <div class="header-section">
+                        <button id="spin-button" class="spin-button" style="min-width:5.5rem;">Spin</button>
+                        <button id="auto-spin-button" class="auto-spin-button" style="min-width:5.5rem;">Auto</button>
+                    </div>
+                </div>
+
+                <!-- Skip Animation Checkbox -->
+                <div class="skip-animation-container">
+                    <input type="checkbox" id="skip-animation" class="skip-animation-checkbox">
+                    <label for="skip-animation" class="skip-animation-label">Skip Animation</label>
+                </div>
+
+                <!-- Slot Reels -->
+                <div class="reel-container">
+                    <div class="reel" id="reel1">
+                        <div class="reel-symbols"></div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="reel-symbols"></div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="reel-symbols"></div>
+                    </div>
+                    <div class="reel" id="reel4">
+                        <div class="reel-symbols"></div>
+                    </div>
+                    <div class="reel" id="reel5">
+                        <div class="reel-symbols"></div>
+                    </div>
+                </div>
+
+                <!-- Message Box -->
+                <div id="message-box" class="message-box mb-6"></div>
+            </div>
+
+            <!-- Right Column: Stats and History -->
+            <div class="stats-panel">
+                <!-- Chart Container -->
+                <div class="chart-container">
+                    <div class="chart-title">Game Statistics</div>
+                    <div id="gameChart" style="height: 250px;"></div>
+                </div>
+
+                <!-- Action Log -->
+                <div class="chart-title" style="margin-top: 20px;">Recent Spins</div>
+                <div id="action-log" class="action-log"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game state variables
+        let balance = 1000;
+        let currentBet = 10;
+        let lastWin = 0;
+        let isSpinning = false;
+        let isAutoSpinning = false;
+        let skipAnimation = false;
+        
+        // Chart tracking variables
+        let gameChart;
+        let chartData = {
+            labels: [],
+            balance: [],
+            bet: [],
+            winnings: []
+        };
+        let spinCount = 0;
+        
+        // Action log tracking
+        let actionLog = [];
+        const MAX_LOG_ENTRIES = 10;
+
+        // Slot symbols with their worth and chance of appearing
+        const slotSymbols = [
+            { symbol: '🍋', worth: 1, chance: 25 },
+            { symbol: '🍒', worth: 2, chance: 20 },
+            { symbol: '🍇', worth: 3, chance: 18 },
+            { symbol: '🍀', worth: 6, chance: 15 },
+            { symbol: '💎', worth: 10, chance: 12 },
+            { symbol: '🎰', worth: 15, chance: 10 }
+        ];
+
+        // Utility mappings
+        const symbolWorths = Object.fromEntries(slotSymbols.map(s => [s.symbol, s.worth]));
+
+        const SYMBOL_HEIGHT = 93;
+        const VISIBLE_SYMBOLS_PER_REEL = 3;
+        const REEL_HEIGHT = SYMBOL_HEIGHT * VISIBLE_SYMBOLS_PER_REEL;
+
+        // DOM elements
+        let reels, spinButton, autoSpinButton, balanceDisplay, lastWinDisplay, currentBetDisplay;
+        let betMinusButton, betPlusButton, messageBox, skipAnimationCheckbox, actionLogContainer;
+
+        // Reel state tracking
+        const reelStates = [];
+
+        class VirtualReel {
+            constructor(container, index) {
+                this.container = container;
+                this.index = index;
+                this.isSpinning = false;
+                this.position = 0;
+                this.speed = 0;
+                this.symbols = new Map(); // Map of position -> symbol element
+                this.animationId = null;
+                this.finalSymbols = [];
+                this.stoppingDistance = 0;
+                this.decelerating = false;
+                
+                // Create weighted symbol array
+                this.weightedSymbols = [];
+                slotSymbols.forEach(s => {
+                    for (let i = 0; i < s.chance; i++) {
+                        this.weightedSymbols.push(s.symbol);
+                    }
+                });
+                
+                this.initializeReel();
+            }
+
+            initializeReel() {
+                // Clear container
+                this.container.innerHTML = '';
+                this.symbols.clear();
+                
+                // Create initial visible symbols
+                for (let i = 0; i < VISIBLE_SYMBOLS_PER_REEL + 2; i++) { // +2 for buffer
+                    this.createSymbolAt(i * SYMBOL_HEIGHT);
+                }
+                this.position = 0;
+            }
+
+            getRandomSymbol() {
+                return this.weightedSymbols[Math.floor(Math.random() * this.weightedSymbols.length)];
+            }
+
+            createSymbolAt(yPosition) {
+                const symbolIndex = Math.floor(yPosition / SYMBOL_HEIGHT);
+                
+                if (this.symbols.has(symbolIndex)) {
+                    return this.symbols.get(symbolIndex);
+                }
+
+                const span = document.createElement('span');
+                span.textContent = this.getRandomSymbol();
+                span.style.top = `${yPosition}px`;
+                this.container.appendChild(span);
+                
+                this.symbols.set(symbolIndex, span);
+                return span;
+            }
+
+            updateSymbols() {
+                const topVisible = Math.floor(-this.position / SYMBOL_HEIGHT);
+                const bottomVisible = topVisible + VISIBLE_SYMBOLS_PER_REEL + 2;
+
+                // Remove symbols that are too far off screen
+                for (let [index, element] of this.symbols) {
+                    if (index < topVisible - 1 || index > bottomVisible + 1) {
+                        element.remove();
+                        this.symbols.delete(index);
+                    }
+                }
+
+                // Create new symbols as needed
+                for (let i = topVisible - 1; i <= bottomVisible + 1; i++) {
+                    if (!this.symbols.has(i)) {
+                        this.createSymbolAt(i * SYMBOL_HEIGHT);
+                    }
+                }
+
+                // Update positions (positive position moves symbols down)
+                for (let [index, element] of this.symbols) {
+                    element.style.top = `${(index * SYMBOL_HEIGHT) + this.position}px`;
+                }
+            }
+
+            startSpinning() {
+                this.isSpinning = true;
+                this.speed = 15; // Initial fast speed
+                this.decelerating = false;
+                this.animate();
+            }
+
+            stopSpinning(finalSymbols) {
+                if (!this.isSpinning) return;
+                
+                this.finalSymbols = finalSymbols;
+                this.decelerating = true;
+                
+                // Calculate stopping distance (we want to end up at a clean position)
+                this.stoppingDistance = Math.ceil(this.position / SYMBOL_HEIGHT) * SYMBOL_HEIGHT;
+            }
+
+            animate() {
+                if (!this.isSpinning) return;
+
+                if (this.decelerating) {
+                    // Decelerate to a stop
+                    this.speed *= 0.95;
+                    
+                    if (this.speed < 2) {
+                        // Snap to final position and place final symbols
+                        this.position = this.stoppingDistance;
+                        this.placeFinalSymbols();
+                        this.isSpinning = false;
+                        return;
+                    }
+                }
+
+                this.position += this.speed;
+                this.updateSymbols();
+                
+                this.animationId = requestAnimationFrame(() => this.animate());
+            }
+
+            placeFinalSymbols(symbols = null) {
+                // Clear existing symbols
+                this.container.innerHTML = '';
+                this.symbols.clear();
+                
+                // Reset position to 0 for clean display
+                this.position = 0;
+                
+                // Use provided symbols or fall back to finalSymbols
+                const symbolsToUse = symbols || this.finalSymbols;
+                
+                // Place the final symbols in the visible area
+                for (let i = 0; i < VISIBLE_SYMBOLS_PER_REEL; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = symbolsToUse[i];
+                    span.style.top = `${i * SYMBOL_HEIGHT}px`;
+                    this.container.appendChild(span);
+                    this.symbols.set(i, span);
+                }
+            }
+
+            getFinalSymbols() {
+                // Generate random final symbols for this reel
+                const symbols = [];
+                for (let i = 0; i < VISIBLE_SYMBOLS_PER_REEL; i++) {
+                    symbols.push(this.getRandomSymbol());
+                }
+                return symbols;
+            }
+
+            getRandomFinalSymbols() {
+                // Generate completely random symbols for skip animation
+                // This ensures each spin shows different random results
+                const symbols = [];
+                for (let i = 0; i < VISIBLE_SYMBOLS_PER_REEL; i++) {
+                    symbols.push(this.getRandomSymbol());
+                }
+                return symbols;
+            }
+
+            getVisibleSymbols() {
+                const visibleSymbols = [];
+                for (let i = 0; i < VISIBLE_SYMBOLS_PER_REEL; i++) {
+                    const element = this.symbols.get(i);
+                    if (element) {
+                        visibleSymbols.push({
+                            symbol: element.textContent,
+                            element: element
+                        });
+                    }
+                }
+                return visibleSymbols;
+            }
+        }
+
+        function initChart() {
+            gameChart = Highcharts.chart('gameChart', {
+                chart: {
+                    type: 'line',
+                    backgroundColor: '#2d3748',
+                    style: {
+                        fontFamily: 'Inter, sans-serif'
+                    }
+                },
+                title: {
+                    text: null
+                },
+                xAxis: {
+                    categories: chartData.labels,
+                    labels: {
+                        style: {
+                            color: '#e2e8f0'
+                        }
+                    },
+                    lineColor: '#4a5568',
+                    tickColor: '#4a5568'
+                },
+                yAxis: {
+                    title: {
+                        text: null
+                    },
+                    labels: {
+                        style: {
+                            color: '#e2e8f0'
+                        }
+                    },
+                    gridLineColor: '#4a5568'
+                },
+                legend: {
+                    itemStyle: {
+                        color: '#e2e8f0'
+                    },
+                    itemHoverStyle: {
+                        color: '#cbd5e0'
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        marker: {
+                            enabled: false
+                        },
+                        lineWidth: 2
+                    }
+                },
+                series: [
+                    {
+                        name: 'Balance',
+                        data: chartData.balance,
+                        color: '#48bb78'
+                    },
+                    {
+                        name: 'Bet Amount',
+                        data: chartData.bet,
+                        color: '#63b3ed'
+                    },
+                    {
+                        name: 'Spin Winnings',
+                        data: chartData.winnings,
+                        color: '#ecc94b'
+                    }
+                ],
+                credits: {
+                    enabled: false
+                }
+            });
+        }
+
+        function initLegend() {
+            const legendContainer = document.getElementById('symbol-legend');
+            legendContainer.innerHTML = '';
+            
+            slotSymbols.forEach(symbol => {
+                const legendItem = document.createElement('div');
+                legendItem.className = 'legend-item';
+                legendItem.innerHTML = `
+                    <span class="legend-symbol">${symbol.symbol}</span>
+                    <span class="legend-value">$${symbol.worth} (${symbol.chance}%)</span>
+                `;
+                legendContainer.appendChild(legendItem);
+            });
+        }
+
+        function initActionLog() {
+            actionLogContainer = document.getElementById('action-log');
+            updateActionLog();
+        }
+
+        function addLogEntry(spinNumber, betAmount, winAmount, symbols) {
+            const entry = {
+                spin: spinNumber,
+                bet: betAmount,
+                win: winAmount,
+                symbols: symbols,
+                timestamp: new Date().toLocaleTimeString()
+            };
+            
+            actionLog.unshift(entry);
+            
+            // Keep only the last MAX_LOG_ENTRIES
+            if (actionLog.length > MAX_LOG_ENTRIES) {
+                actionLog = actionLog.slice(0, MAX_LOG_ENTRIES);
+            }
+            
+            updateActionLog();
+        }
+
+        function updateActionLog() {
+            if (!actionLogContainer) return;
+            
+            actionLogContainer.innerHTML = '';
+            
+            if (actionLog.length === 0) {
+                actionLogContainer.innerHTML = '<div class="log-entry">No spins yet</div>';
+                return;
+            }
+            
+            actionLog.forEach(entry => {
+                const logEntry = document.createElement('div');
+                logEntry.className = 'log-entry';
+                
+                const resultClass = entry.win > 0 ? 'log-win' : 'log-loss';
+                const resultText = entry.win > 0 ? `+$${entry.win}` : `-$${entry.bet}`;
+                
+                logEntry.innerHTML = `
+                    <div class="${resultClass}">
+                        Spin ${entry.spin}: ${resultText}
+                    </div>
+                    <div style="font-size: 10px; color: #a0aec0;">
+                        ${entry.symbols.join(' ')} | ${entry.timestamp}
+                    </div>
+                `;
+                
+                actionLogContainer.appendChild(logEntry);
+            });
+        }
+
+        function initGame() {
+            // Get DOM elements
+            reels = [
+                document.querySelector('#reel1 .reel-symbols'),
+                document.querySelector('#reel2 .reel-symbols'),
+                document.querySelector('#reel3 .reel-symbols'),
+                document.querySelector('#reel4 .reel-symbols'),
+                document.querySelector('#reel5 .reel-symbols')
+            ];
+            spinButton = document.getElementById('spin-button');
+            autoSpinButton = document.getElementById('auto-spin-button');
+            balanceDisplay = document.getElementById('balance');
+            lastWinDisplay = document.getElementById('last-win');
+            currentBetDisplay = document.getElementById('current-bet');
+            betMinusButton = document.getElementById('bet-minus');
+            betPlusButton = document.getElementById('bet-plus');
+            messageBox = document.getElementById('message-box');
+            skipAnimationCheckbox = document.getElementById('skip-animation');
+
+            // Initialize virtual reels
+            reelStates.length = 0;
+            for (let i = 0; i < reels.length; i++) {
+                reelStates.push(new VirtualReel(reels[i], i));
+            }
+
+            // Initialize chart
+            initChart();
+
+            // Initialize legend
+            initLegend();
+
+            // Initialize action log
+            initActionLog();
+
+            updateUI();
+            
+            // Add initial data point to chart
+            chartData.labels.push('Start');
+            chartData.balance.push(balance);
+            chartData.bet.push(currentBet);
+            chartData.winnings.push(0);
+            
+            // Generate dynamic emoji legend from slotSymbols
+            const emojiLegend = slotSymbols.map(s => `${s.symbol}=$${s.worth}`).join(', ');
+            showMessage(`Welcome to Lucky Spin Slots! With a $10 bet, emojis are worth their exact value: ${emojiLegend}. Higher bets multiply your winnings!`, "info");
+        }
+
+        function checkLineMatch(line) {
+            if (line.length === 0 || !line[0].symbol) return false;
+            const firstSymbol = line[0].symbol;
+            return line.every(obj => obj.symbol === firstSymbol);
+        }
+
+        function calculateLinePayout(line) {
+            // Calculate base payout from symbol values
+            const basePayout = line.reduce((sum, obj) => sum + (symbolWorths[obj.symbol] || 0), 0);
+            // Scale payout based on bet amount (with $10 bet = exact symbol values)
+            const payoutMultiplier = currentBet / 10;
+            return Math.round(basePayout * payoutMultiplier);
+        }
+
+        function convertToGrid(flatSymbols) {
+            const grid = [];
+            for (let r = 0; r < VISIBLE_SYMBOLS_PER_REEL; r++) {
+                grid[r] = [];
+                for (let c = 0; c < reels.length; c++) {
+                    grid[r][c] = flatSymbols[c * VISIBLE_SYMBOLS_PER_REEL + r];
+                }
+            }
+            return grid;
+        }
+
+        function clearThrobAnimation() {
+            reelStates.forEach(reel => {
+                for (let [index, element] of reel.symbols) {
+                    element.classList.remove('throb');
+                }
+            });
+        }
+
+        function checkWin(allVisibleSymbols) {
+            let totalWinAmount = 0;
+            let winMessages = [];
+            const winningSymbolElements = new Set();
+            const grid = convertToGrid(allVisibleSymbols);
+
+            // Check for all 15 matching (Grand Jackpot)
+            const allFifteenMatch = allVisibleSymbols.every(obj => obj.symbol === allVisibleSymbols[0].symbol);
+            if (allFifteenMatch) {
+                const symbol = allVisibleSymbols[0].symbol;
+                const jackpotPayout = currentBet * 500;
+                totalWinAmount += jackpotPayout;
+                winMessages.push(`🎉 GRAND JACKPOT! All 15 "${symbol}" symbols match! You won $${jackpotPayout}!`);
+                allVisibleSymbols.forEach(obj => winningSymbolElements.add(obj.element));
+            }
+
+            // Check horizontal 5-matches
+            for (let r = 0; r < VISIBLE_SYMBOLS_PER_REEL; r++) {
+                const row = grid[r];
+                if (checkLineMatch(row)) {
+                    const payout = calculateLinePayout(row) * 8;
+                    totalWinAmount += payout;
+                    winMessages.push(`✅ 5-Match Horizontal Row ${r + 1} with "${row[0].symbol}"! Won $${payout}`);
+                    row.forEach(obj => winningSymbolElements.add(obj.element));
+                }
+            }
+
+            // Check horizontal 3-matches
+            for (let r = 0; r < VISIBLE_SYMBOLS_PER_REEL; r++) {
+                const row = grid[r];
+                for (let c = 0; c <= reels.length - 3; c++) {
+                    const line = [row[c], row[c+1], row[c+2]];
+                    if (checkLineMatch(line)) {
+                        const isPartOf5Match = (row.length === 5 && checkLineMatch(row) && row[0].symbol === line[0].symbol);
+                        if (!isPartOf5Match) {
+                            const payout = calculateLinePayout(line);
+                            totalWinAmount += payout;
+                            winMessages.push(`➡️ 3-Match Horizontal Row ${r + 1} (Col ${c + 1}-${c + 3}) with "${line[0].symbol}"! Won $${payout}`);
+                            line.forEach(obj => winningSymbolElements.add(obj.element));
+                        }
+                    }
+                }
+            }
+
+            // Check vertical 3-matches
+            for (let c = 0; c < reels.length; c++) {
+                const column = [grid[0][c], grid[1][c], grid[2][c]];
+                if (checkLineMatch(column)) {
+                    const payout = calculateLinePayout(column) * 2;
+                    totalWinAmount += payout;
+                    winMessages.push(`⬆️ 3-Match Vertical Column ${c + 1} with "${column[0].symbol}"! Won $${payout}`);
+                    column.forEach(obj => winningSymbolElements.add(obj.element));
+                }
+            }
+
+            // Check diagonal 3-matches
+            const diagonals3 = [
+                [grid[0][0], grid[1][1], grid[2][2]],
+                [grid[0][1], grid[1][2], grid[2][3]],
+                [grid[0][2], grid[1][3], grid[2][4]],
+                [grid[0][4], grid[1][3], grid[2][2]],
+                [grid[0][3], grid[1][2], grid[2][1]],
+                [grid[0][2], grid[1][1], grid[2][0]]
+            ];
+
+            diagonals3.forEach((line, index) => {
+                if (checkLineMatch(line)) {
+                    const payout = calculateLinePayout(line) * 2;
+                    totalWinAmount += payout;
+                    winMessages.push(`↘️↙️ 3-Match Diagonal (Pattern ${index + 1}) with "${line[0].symbol}"! Won $${payout}`);
+                    line.forEach(obj => winningSymbolElements.add(obj.element));
+                }
+            });
+
+            // Check V-shape and A-shape patterns
+            const vShape = [grid[0][0], grid[1][1], grid[2][2], grid[1][3], grid[0][4]];
+            if (checkLineMatch(vShape)) {
+                const payout = calculateLinePayout(vShape) * 15;
+                totalWinAmount += payout;
+                winMessages.push(`V-Shape Win! All 5 "${vShape[0].symbol}"! Won $${payout}`);
+                vShape.forEach(obj => winningSymbolElements.add(obj.element));
+            }
+
+            const aShape = [grid[2][0], grid[1][1], grid[0][2], grid[1][3], grid[2][4]];
+            if (checkLineMatch(aShape)) {
+                const payout = calculateLinePayout(aShape) * 15;
+                totalWinAmount += payout;
+                winMessages.push(`A-Shape Win! All 5 "${aShape[0].symbol}"! Won $${payout}`);
+                aShape.forEach(obj => winningSymbolElements.add(obj.element));
+            }
+
+            // Update balance and display results
+            if (totalWinAmount > 0) {
+                balance += totalWinAmount;
+                lastWin = totalWinAmount;
+                showMessage(winMessages.join('<br>') + `<br><br>💰 Total Win: $${totalWinAmount}!`, "success");
+                winningSymbolElements.forEach(el => {
+                    if (el) el.classList.add('throb');
+                });
+            } else {
+                lastWin = 0;
+                showMessage("No win this time! Try again!", "info");
+            }
+            updateUI();
+        }
+
+        function updateChartData() {
+            spinCount++;
+            
+            // Add data points
+            chartData.labels.push(`Spin ${spinCount}`);
+            chartData.balance.push(balance);
+            chartData.bet.push(currentBet);
+            chartData.winnings.push(lastWin);
+            
+            // Keep only last 20 data points to prevent chart from getting too crowded
+            if (chartData.labels.length > 20) {
+                chartData.labels.shift();
+                chartData.balance.shift();
+                chartData.bet.shift();
+                chartData.winnings.shift();
+            }
+            
+            // Update chart efficiently with Highcharts
+            if (gameChart) {
+                gameChart.xAxis[0].setCategories(chartData.labels, false);
+                gameChart.series[0].setData(chartData.balance, false);
+                gameChart.series[1].setData(chartData.bet, false);
+                gameChart.series[2].setData(chartData.winnings, false);
+                gameChart.redraw();
+            }
+        }
+
+        function updateUI() {
+            balanceDisplay.textContent = `${balance}`;
+            lastWinDisplay.textContent = `${lastWin}`;
+            currentBetDisplay.textContent = currentBet;
+
+            betMinusButton.disabled = currentBet <= 10 || isSpinning;
+            betPlusButton.disabled = currentBet >= 100 || isSpinning || currentBet + 10 > balance;
+            spinButton.disabled = isSpinning || balance < currentBet;
+            autoSpinButton.disabled = balance < currentBet;
+            
+            // Update auto-spin button appearance
+            if (isAutoSpinning) {
+                autoSpinButton.classList.add('active');
+                autoSpinButton.textContent = 'Stop';
+            } else {
+                autoSpinButton.classList.remove('active');
+                autoSpinButton.textContent = 'Auto';
+            }
+        }
+
+        function showMessage(msg, type) {
+            messageBox.innerHTML = msg;
+            messageBox.className = 'message-box show mb-6';
+
+            messageBox.classList.remove('bg-blue-700', 'bg-green-700', 'bg-red-700', 'text-blue-200', 'text-green-200', 'text-red-200');
+            if (type === "info") {
+                messageBox.classList.add('bg-blue-700', 'text-blue-200');
+            } else if (type === "success") {
+                messageBox.classList.add('bg-green-700', 'text-green-200');
+            } else if (type === "error") {
+                messageBox.classList.add('bg-red-700', 'text-red-200');
+            }
+        }
+
+        async function spin() {
+            if (isSpinning || balance < currentBet) {
+                if (balance < currentBet) {
+                    showMessage("Not enough balance to spin!", "error");
+                }
+                return;
+            }
+
+            isSpinning = true;
+            updateUI();
+            showMessage("Spinning...", "info");
+            lastWin = 0;
+            clearThrobAnimation();
+
+            balance -= currentBet;
+            skipAnimation = skipAnimationCheckbox.checked;
+
+            if (skipAnimation) {
+                // Skip animation - immediately show final result
+                const allVisibleSymbols = [];
+                reelStates.forEach(reel => {
+                    const finalSymbols = reel.getRandomFinalSymbols();
+                    reel.placeFinalSymbols(finalSymbols);
+                    allVisibleSymbols.push(...reel.getVisibleSymbols());
+                });
+                
+                checkWin(allVisibleSymbols);
+                isSpinning = false;
+                updateUI();
+                
+                // Add log entry
+                const symbols = allVisibleSymbols.map(obj => obj.symbol);
+                addLogEntry(spinCount + 1, currentBet, lastWin, symbols);
+                
+                // Update chart
+                setTimeout(() => {
+                    updateChartData();
+                }, 200);
+                
+                // Continue auto-spinning if enabled
+                if (isAutoSpinning && balance >= currentBet) {
+                    setTimeout(() => {
+                        spin();
+                    }, 100); // Faster for skip animation
+                } else if (isAutoSpinning && balance < currentBet) {
+                    isAutoSpinning = false;
+                    showMessage("Auto-spin stopped - insufficient balance!", "error");
+                    updateUI();
+                }
+            } else {
+                // Normal animation
+                // Start all reels spinning simultaneously
+                reelStates.forEach(reel => {
+                    reel.startSpinning();
+                });
+
+                // Wait a moment for all reels to get spinning
+                await new Promise(resolve => setTimeout(resolve, 1000));
+
+                // Stop reels one by one with 500ms delay
+                for (let i = 0; i < reelStates.length; i++) {
+                    const reel = reelStates[i];
+                    const finalSymbols = reel.getFinalSymbols();
+                    reel.stopSpinning(finalSymbols);
+                    
+                    // Wait 500ms before stopping the next reel (except for the last one)
+                    if (i < reelStates.length - 1) {
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                    }
+                }
+
+                // Wait for all reels to finish stopping
+                await new Promise(resolve => {
+                    const checkAllStopped = () => {
+                        if (reelStates.every(reel => !reel.isSpinning)) {
+                            resolve();
+                        } else {
+                            setTimeout(checkAllStopped, 100);
+                        }
+                    };
+                    checkAllStopped();
+                });
+
+                // Collect all visible symbols for win checking
+                const allVisibleSymbols = [];
+                reelStates.forEach(reel => {
+                    allVisibleSymbols.push(...reel.getVisibleSymbols());
+                });
+
+                checkWin(allVisibleSymbols);
+                isSpinning = false;
+                updateUI();
+                
+                // Add log entry
+                const symbols = allVisibleSymbols.map(obj => obj.symbol);
+                addLogEntry(spinCount + 1, currentBet, lastWin, symbols);
+                
+                // Update chart after a brief delay to ensure UI is updated first
+                setTimeout(() => {
+                    updateChartData();
+                }, 200);
+                
+                // Continue auto-spinning if enabled
+                if (isAutoSpinning && balance >= currentBet) {
+                    setTimeout(() => {
+                        spin();
+                    }, 1000); // Wait 1 second before next auto-spin
+                } else if (isAutoSpinning && balance < currentBet) {
+                    // Stop auto-spinning if out of money
+                    isAutoSpinning = false;
+                    showMessage("Auto-spin stopped - insufficient balance!", "error");
+                    updateUI();
+                }
+            }
+        }
+
+        function toggleAutoSpin() {
+            if (balance < currentBet) {
+                showMessage("Not enough balance to auto-spin!", "error");
+                return;
+            }
+            
+            isAutoSpinning = !isAutoSpinning;
+            
+            if (isAutoSpinning) {
+                showMessage("Auto-spin started! Click 'Stop' to stop.", "info");
+                // Start the first auto-spin
+                if (!isSpinning) {
+                    spin();
+                }
+            } else {
+                showMessage("Auto-spin stopped!", "info");
+            }
+            
+            updateUI();
+        }
+
+        // Event listeners
+        function setupEventListeners() {
+            spinButton.addEventListener('click', spin);
+            autoSpinButton.addEventListener('click', toggleAutoSpin);
+
+            betMinusButton.addEventListener('click', () => {
+                if (currentBet > 10 && !isSpinning) {
+                    currentBet -= 10;
+                    updateUI();
+                }
+            });
+
+            betPlusButton.addEventListener('click', () => {
+                if (currentBet < 100 && !isSpinning && currentBet + 10 <= balance) {
+                    currentBet += 10;
+                    updateUI();
+                } else if (currentBet + 10 > balance && !isSpinning) {
+                    showMessage("Cannot bet more than your balance!", "error");
+                }
+            });
+        }
+
+        // Initialize game when page loads
+        window.addEventListener('load', () => {
+            initGame();
+            setupEventListeners();
+        });
+    </script>
+</body>
+</html>

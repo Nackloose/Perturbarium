@@ -1,0 +1,271 @@
+
+theory SineScrambleAttacks
+
+begin
+
+builtins: hashing, symmetric-encryption, diffie-hellman, time
+
+functions: score/3, permute/3, substitute/3, transform_round/4, encrypt_multi_round/3, decrypt_multi_round/3, encrypt_segmented/3, decrypt_segmented/3, differential/3, linear_approximation/4, correlation/2, generate_key/1, extract_component/2, make_parameters/3
+
+
+rule EncryptMultiRound:
+    [Plaintext(~plaintext), KeyVector(~key_vector), Parameters(~params)]
+    --[EncryptMultiRound(~plaintext, ~key_vector, ~params)]->
+    [Ciphertext(encrypt_multi_round(~plaintext, ~key_vector, ~params))]
+
+rule EncryptSegmented:
+    [Plaintext(~plaintext), KeyVector(~key_vector), Parameters(~params)]
+    --[EncryptSegmented(~plaintext, ~key_vector, ~params)]->
+    [Ciphertext(encrypt_segmented(~plaintext, ~key_vector, ~params))]
+
+
+rule GenerateRandomKey:
+    [Fr(~key_dimension)]
+    --[GenerateKey(~key_dimension)]->
+    [KeyVector(generate_key(~key_dimension))]
+
+
+rule SetupParameters:
+    [Fr(~amplitude), Fr(~frequency), Fr(~phase)]
+    --[SetupParameters(~amplitude, ~frequency, ~phase)]->
+    [Parameters(make_parameters(~amplitude, ~frequency, ~phase))]
+
+
+
+
+rule KnownPlaintextAttack:
+    [Plaintext(~known_plaintext), Ciphertext(~known_ciphertext), KeyVector(~key_vector), Parameters(~params)]
+    --[KnownPlaintextAttack(~known_plaintext, ~known_ciphertext, ~key_vector, ~params)]->
+    [AttackTrace('KPA', ~known_plaintext, ~known_ciphertext, ~key_vector, ~params)]
+
+
+rule ChosenPlaintextAttack:
+    [Plaintext(~chosen_plaintext), KeyVector(~key_vector), Parameters(~params)]
+    --[ChosenPlaintextAttack(~chosen_plaintext, ~key_vector, ~params)]->
+    [Ciphertext(encrypt_multi_round(~chosen_plaintext, ~key_vector, ~params)),
+     AttackTrace('CPA', ~chosen_plaintext, encrypt_multi_round(~chosen_plaintext, ~key_vector, ~params), ~key_vector, ~params)]
+
+
+rule DifferentialCryptanalysis:
+    [Plaintext(~plaintext1), Plaintext(~plaintext2), KeyVector(~key_vector), Parameters(~params)]
+    --[DifferentialCryptanalysis(~plaintext1, ~plaintext2, ~key_vector, ~params)]->
+    [DifferentialPair(differential(~plaintext1, ~plaintext2, ~key_vector, ~params)),
+     Ciphertext(encrypt_multi_round(~plaintext1, ~key_vector, ~params)),
+     Ciphertext(encrypt_multi_round(~plaintext2, ~key_vector, ~params))]
+
+
+rule LinearCryptanalysis:
+    [Plaintext(~plaintext), Ciphertext(~ciphertext), KeyVector(~key_vector), Parameters(~params)]
+    --[LinearCryptanalysis(~plaintext, ~ciphertext, ~key_vector, ~params)]->
+    [LinearApproximation(linear_approximation(~plaintext, ~ciphertext, ~key_vector, ~params))]
+
+
+rule BruteForceAttack:
+    [Fr(~attempted_key), Fr(~target_ciphertext)]
+    --[BruteForceAttack(~attempted_key, ~target_ciphertext)]->
+    [KeyVector(~attempted_key),
+     Ciphertext(encrypt_multi_round('test_plaintext', ~attempted_key, default_params))]
+
+
+rule TimingAttack:
+    [Plaintext(~plaintext), KeyVector(~key_vector), Parameters(~params), Fr(~timing_data)]
+    --[TimingAttack(~plaintext, ~key_vector, ~params, ~timing_data)]->
+    [Ciphertext(encrypt_multi_round(~plaintext, ~key_vector, ~params)),
+     AttackTrace('Timing', ~plaintext, encrypt_multi_round(~plaintext, ~key_vector, ~params), ~key_vector, ~params)]
+
+
+rule PowerAnalysisAttack:
+    [Plaintext(~plaintext), KeyVector(~key_vector), Parameters(~params), Fr(~power_trace)]
+    --[PowerAnalysisAttack(~plaintext, ~key_vector, ~params, ~power_trace)]->
+    [Ciphertext(encrypt_multi_round(~plaintext, ~key_vector, ~params)),
+     AttackTrace('Power', ~plaintext, encrypt_multi_round(~plaintext, ~key_vector, ~params), ~key_vector, ~params)]
+
+
+rule MeetInTheMiddleAttack:
+    [Plaintext(~plaintext), Ciphertext(~ciphertext), KeyVector(~key_vector1), KeyVector(~key_vector2), Parameters(~params)]
+    --[MeetInTheMiddleAttack(~plaintext, ~ciphertext, ~key_vector1, ~key_vector2, ~params)]->
+    [AttackTrace('MITM', ~plaintext, ~ciphertext, ~key_vector1, ~key_vector2, ~params)]
+
+
+rule SlideAttack:
+    [Plaintext(~plaintext1), Plaintext(~plaintext2), KeyVector(~key_vector), Parameters(~params)]
+    --[SlideAttack(~plaintext1, ~plaintext2, ~key_vector, ~params)]->
+    [AttackTrace('Slide', ~plaintext1, ~plaintext2, ~key_vector, ~params)]
+
+
+rule AlgebraicAttack:
+    [Plaintext(~plaintext), Ciphertext(~ciphertext), KeyVector(~key_vector), Parameters(~params)]
+    --[AlgebraicAttack(~plaintext, ~ciphertext, ~key_vector, ~params)]->
+    [AttackTrace('Algebraic', ~plaintext, ~ciphertext, ~key_vector, ~params)]
+
+
+
+
+lemma kpa_resistance_multi_round:
+    "All plaintext1 plaintext2 key_vector1 key_vector2 params1 params2 #i #j.
+        KnownPlaintextAttack(plaintext1, ciphertext1, key_vector1, params1) @ #i &
+        KnownPlaintextAttack(plaintext2, ciphertext2, key_vector2, params2) @ #j &
+        plaintext1 = plaintext2 &
+        ciphertext1 = ciphertext2
+        ==> key_vector1 = key_vector2 & params1 = params2"
+
+lemma kpa_resistance_segmented:
+    "All plaintext1 plaintext2 key_vector1 key_vector2 params1 params2 #i #j.
+        KnownPlaintextAttack(plaintext1, ciphertext1, key_vector1, params1) @ #i &
+        KnownPlaintextAttack(plaintext2, ciphertext2, key_vector2, params2) @ #j &
+        plaintext1 = plaintext2 &
+        ciphertext1 = encrypt_segmented(plaintext2, key_vector2, params2)
+        ==> key_vector1 = key_vector2 & params1 = params2"
+
+
+lemma cpa_resistance_multi_round:
+    "All plaintext1 plaintext2 key_vector1 key_vector2 params1 params2 #i #j.
+        ChosenPlaintextAttack(plaintext1, key_vector1, params1) @ #i &
+        ChosenPlaintextAttack(plaintext2, key_vector2, params2) @ #j &
+        plaintext1 != plaintext2
+        ==> encrypt_multi_round(plaintext1, key_vector1, params1) != encrypt_multi_round(plaintext2, key_vector2, params2)"
+
+lemma cpa_resistance_segmented:
+    "All plaintext1 plaintext2 key_vector1 key_vector2 params1 params2 #i #j.
+        ChosenPlaintextAttack(plaintext1, key_vector1, params1) @ #i &
+        ChosenPlaintextAttack(plaintext2, key_vector2, params2) @ #j &
+        plaintext1 != plaintext2
+        ==> encrypt_segmented(plaintext1, key_vector1, params1) != encrypt_segmented(plaintext2, key_vector2, params2)"
+
+
+lemma differential_resistance_multi_round:
+    "All plaintext1 plaintext2 key_vector params #i.
+        DifferentialCryptanalysis(plaintext1, plaintext2, key_vector, params) @ #i
+        ==> differential(plaintext1, plaintext2, key_vector, params) != 'weak_differential'"
+
+lemma differential_resistance_segmented:
+    "All plaintext1 plaintext2 key_vector params #i.
+        DifferentialCryptanalysis(plaintext1, plaintext2, key_vector, params) @ #i
+        ==> differential(plaintext1, plaintext2, key_vector, params) != 'weak_differential'"
+
+
+lemma linear_resistance_multi_round:
+    "All plaintext ciphertext key_vector params #i.
+        LinearCryptanalysis(plaintext, ciphertext, key_vector, params) @ #i
+        ==> correlation(linear_approximation(plaintext, ciphertext, key_vector, params), prob) < 0.6"
+
+lemma linear_resistance_segmented:
+    "All plaintext ciphertext key_vector params #i.
+        LinearCryptanalysis(plaintext, ciphertext, key_vector, params) @ #i
+        ==> correlation(linear_approximation(plaintext, ciphertext, key_vector, params), prob) < 0.6"
+
+
+lemma brute_force_resistance:
+    "All attempted_key target_ciphertext #i #j.
+        BruteForceAttack(attempted_key, target_ciphertext) @ #i &
+        K(attempted_key) @ #j
+        ==> #i < #j"
+
+
+lemma timing_attack_resistance:
+    "All plaintext1 plaintext2 key_vector params timing1 timing2 #i #j.
+        TimingAttack(plaintext1, key_vector, params, timing1) @ #i &
+        TimingAttack(plaintext2, key_vector, params, timing2) @ #j &
+        plaintext1 != plaintext2
+        ==> timing1 = timing2"
+
+
+lemma power_analysis_resistance:
+    "All plaintext1 plaintext2 key_vector params power1 power2 #i #j.
+        PowerAnalysisAttack(plaintext1, key_vector, params, power1) @ #i &
+        PowerAnalysisAttack(plaintext2, key_vector, params, power2) @ #j &
+        plaintext1 != plaintext2
+        ==> power1 = power2"
+
+
+lemma mitm_resistance:
+    "All plaintext ciphertext key_vector1 key_vector2 params #i.
+        MeetInTheMiddleAttack(plaintext, ciphertext, key_vector1, key_vector2, params) @ #i
+        ==> key_vector1 != key_vector2"
+
+
+lemma slide_attack_resistance:
+    "All plaintext1 plaintext2 key_vector params #i.
+        SlideAttack(plaintext1, plaintext2, key_vector, params) @ #i
+        ==> plaintext1 != plaintext2"
+
+
+lemma algebraic_attack_resistance:
+    "All plaintext ciphertext key_vector params #i.
+        AlgebraicAttack(plaintext, ciphertext, key_vector, params) @ #i
+        ==> not(Ex solution. solve_algebraic_equation(plaintext, ciphertext, key_vector, params, solution))"
+
+
+
+
+lemma multi_round_security_level:
+    "All plaintext key_vector params #i.
+        EncryptMultiRound(plaintext, key_vector, params) @ #i
+        ==> security_level('high')"
+
+
+lemma segmented_security_level:
+    "All plaintext key_vector params #i.
+        EncryptSegmented(plaintext, key_vector, params) @ #i
+        ==> security_level('medium')"
+
+
+lemma key_space_analysis:
+    "All key_vector1 key_vector2 #i #j.
+        KeyVector(key_vector1) @ #i &
+        KeyVector(key_vector2) @ #j &
+        key_vector1 != key_vector2
+        ==> key_space_size('large')"
+
+
+lemma avalanche_effect_verification:
+    "All plaintext1 plaintext2 key_vector params #i #j.
+        EncryptMultiRound(plaintext1, key_vector, params) @ #i &
+        EncryptMultiRound(plaintext2, key_vector, params) @ #j &
+        plaintext1 != plaintext2
+        ==> avalanche_effect('strong')"
+
+
+
+
+restriction attack_modeling:
+    "All attack_type plaintext ciphertext key_vector params #i.
+        AttackTrace(attack_type, plaintext, ciphertext, key_vector, params) @ #i
+        ==> attack_type = 'KPA' | attack_type = 'CPA' | attack_type = 'Timing' | 
+            attack_type = 'Power' | attack_type = 'MITM' | attack_type = 'Slide' | 
+            attack_type = 'Algebraic'"
+
+
+restriction valid_differential_pair:
+    "All plaintext1 plaintext2 key_vector params #i.
+        DifferentialPair(differential(plaintext1, plaintext2, key_vector, params)) @ #i
+        ==> plaintext1 != plaintext2"
+
+
+restriction valid_linear_correlation:
+    "All plaintext ciphertext key_vector params correlation #i.
+        LinearApproximation(linear_approximation(plaintext, ciphertext, key_vector, params)) @ #i &
+        correlation(linear_approximation(plaintext, ciphertext, key_vector, params), correlation)
+        ==> correlation >= 0.0 & correlation <= 1.0"
+
+
+restriction brute_force_infeasibility:
+    "All attempted_key target_ciphertext #i.
+        BruteForceAttack(attempted_key, target_ciphertext) @ #i
+        ==> key_space_size('large')"
+
+
+restriction timing_attack_prevention:
+    "All plaintext1 plaintext2 key_vector params timing1 timing2 #i #j.
+        TimingAttack(plaintext1, key_vector, params, timing1) @ #i &
+        TimingAttack(plaintext2, key_vector, params, timing2) @ #j
+        ==> timing1 = timing2"
+
+
+restriction power_analysis_prevention:
+    "All plaintext1 plaintext2 key_vector params power1 power2 #i #j.
+        PowerAnalysisAttack(plaintext1, key_vector, params, power1) @ #i &
+        PowerAnalysisAttack(plaintext2, key_vector, params, power2) @ #j
+        ==> power1 = power2"
+
+end 

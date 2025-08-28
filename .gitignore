@@ -1,0 +1,9 @@
+# Start of Selection
+**/venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+# End of Selection
+
+hi.md

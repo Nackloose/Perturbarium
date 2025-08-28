@@ -1,0 +1,55 @@
+SineScramble Tamarin Prover Analysis Report
+==========================================
+Date: Wed Jul 30 12:17:27 AM EDT 2025
+Version: 2.1.0
+
+This report contains the results of formal security analysis using Tamarin Prover.
+
+ANALYSIS SUMMARY:
+================
+
+Core Security Properties:
+- Confidentiality: [TO BE FILLED]
+- Integrity: [TO BE FILLED]
+- Correctness: [TO BE FILLED]
+
+Attack Resistance:
+- Known-Plaintext Attack (KPA): [TO BE FILLED]
+- Chosen-Plaintext Attack (CPA): [TO BE FILLED]
+- Differential Cryptanalysis: [TO BE FILLED]
+- Linear Cryptanalysis: [TO BE FILLED]
+
+Side-Channel Resistance:
+- Timing Attacks: [TO BE FILLED]
+- Power Analysis: [TO BE FILLED]
+
+Advanced Attack Resistance:
+- Meet-in-the-Middle (MITM): [TO BE FILLED]
+- Slide Attacks: [TO BE FILLED]
+- Algebraic Attacks: [TO BE FILLED]
+
+Cryptographic Properties:
+- Key Space: [TO BE FILLED]
+- Parameter Independence: [TO BE FILLED]
+- Avalanche Effect: [TO BE FILLED]
+
+RECOMMENDATIONS:
+===============
+
+1. Review any failed proofs and understand the counterexamples
+2. Consider strengthening the model for failed properties
+3. Implement additional security measures for weak points
+4. Conduct empirical testing to complement formal analysis
+
+LIMITATIONS:
+============
+
+1. Symbolic analysis may miss implementation-specific issues
+2. Model abstraction may not capture all real-world scenarios
+3. Computational limits may prevent analysis of complex properties
+4. Results should be used alongside other security analysis methods
+
+For detailed analysis results, run individual lemmas with:
+tamarin-prover sinescramble_tamarin.spthy --prove=<lemma_name>
+tamarin-prover sinescramble_attacks.spthy --prove=<lemma_name>
+

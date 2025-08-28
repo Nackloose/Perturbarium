@@ -1,0 +1,9 @@
+maude tool: 'maude'
+ checking version: caught exception while executing:
+maude --version
+with input: 
+Exception: 
+   maude: readCreateProcessWithExitCode: posix_spawnp: invalid argument (Exec format error)
+tamarin-prover: Maude is not installed. Ensure Maude is available and on the path.
+CallStack (from HasCallStack):
+  error, called at src/Main/Console.hs:147:9 in main:Main.Console

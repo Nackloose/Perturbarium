@@ -39,7 +39,7 @@ from .plot_data import (
 )
 
 __version__ = "1.0.0"
-__author__ = "EPStudio Team"
+__author__ = "N Lisowski"
 
 # Main classes and functions for easy access
 __all__ = [

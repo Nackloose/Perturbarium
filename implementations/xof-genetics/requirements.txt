@@ -1,0 +1,5 @@
+# Core dependencies
+blake3>=0.3.0; python_version >= "3.7"  # Optional: SHA256 available from stdlib
+
+# For extreme tests
+psutil>=5.0.0 
