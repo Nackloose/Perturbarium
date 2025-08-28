@@ -21,6 +21,7 @@
 - [What is Inkspill?](#what-is-inkspill)
 - [Relationship Between Axia and Inkspill](#relationship-between-axia-and-inkspill)
 - [📚 Contents](#contents)
+  - [🧮 Axia (`axia/`)](#-axia-axia)
   - [🧠 Theory (`theory/`)](#-theory-theory)
   - [📋 Specifications (`specifications/`)](#-specifications-specifications)
   - [📖 Guides (`guides/`)](#-guides-guides)
@@ -102,6 +103,7 @@ Ideas are spilled here, sifted, then (sometimes) shaped into something worthy of
 - **Software Licensing**: See [`specifications/Licensee.md`](specifications/Licensee.md) and [`implementations/licensee/`](implementations/licensee/)
 - **Data Permutation**: Review [`specifications/SineShift.md`](specifications/SineShift.md) and [`implementations/sineshift/`](implementations/sineshift/)
 - **Coding Best Practices**: Read [`guides/Coders-Guide-to-'Good'.md`](guides/Coders-Guide-to-'Good'.md)
+- **Optimization Theory**: Explore [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for fundamental laws
 
 ### I want to run something...
 - **Cipher Demo**: [`implementations/sinescramble/demo.py`](implementations/sinescramble/demo.py)
@@ -110,6 +112,7 @@ Ideas are spilled here, sifted, then (sometimes) shaped into something worthy of
 - **Permutation Analysis**: [`implementations/sineshift/run.sh`](implementations/sineshift/run.sh)
 
 ### I want to understand the theory...
+- **Fundamental Laws**: [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for optimization axioms
 - **Evolutionary Algorithms**: [`theory/xof-genetics.md`](theory/xof-genetics.md)
 - **Diff Formats**: [`theory/gdiff.md`](theory/gdiff.md)
 - **Identity Verification**: [`theory/Reverse-Publickey-Identity-Verification[RPIV].md`](theory/Reverse-Publickey-Identity-Verification[RPIV].md)
@@ -119,6 +122,11 @@ Ideas are spilled here, sifted, then (sometimes) shaped into something worthy of
 ## 📚 Contents
 
 Axia is organized by its core domains of inquiry, and now includes the Inkspill folder for all the raw, in-progress, and unfiltered material — the breeding ground for the next paradigm shift.
+
+### 🧮 Axia (`axia/`)
+The foundational theoretical bedrock — mathematical principles and universal laws that underpin all other work.
+
+-   [`Evolution-Axiom.md`](axia/Evolution-Axiom.md) — The Fundamental Laws of Adaptive Search: A rigorous mathematical treatment establishing the three fundamental laws that govern all effective optimization algorithms.
 
 ### 🧠 Theory (`theory/`)
 Schemas, design systems, and aesthetic principles.
@@ -139,7 +147,6 @@ Systems thinking, architecture, and resilience patterns.
 Paradigms, best practices, and language-agnostic insights.
 
 -   [`Coders-Guide-to-'Good'.md`](guides/Coders-Guide-to-'Good'.md) — A comprehensive framework for timeless software craftsmanship with 10 fundamental tenets and actionable guidelines.
--   [`Evolution-Axia.md`](guides/Evolution-Axia.md) — The evolution and philosophy of Axia itself.
 
 ### 🔧 Implementations (`implementations/`)
 Working implementations of the theoretical concepts.
@@ -174,17 +181,18 @@ Each section contains canonical writings, distilled principles, personal notes, 
 ## Project Relationships
 
 ```
-SineShift (permutation) 
-    ↓ used by
-SineScramble (cipher)
-    ↓ used by  
-Licensee (licensing)
-    ↓ independent
-Instamaster (audio)
-    ↓ independent
-XOF-Genetics (evolution)
-    ↓ independent
-Claude-Agents (AI automation)
+Axia (foundational laws)
+    ↓ theoretical foundation
+Theory (mathematical frameworks)
+    ↓ applied principles
+Specifications (technical blueprints)
+    ↓ implementation guidance
+Implementations (working code)
+    ↓ practical validation
+Guides (best practices)
+    ↓ distilled wisdom
+Inkspill (creative exploration)
+    ↓ experimental ideas
 ```
 
 Each implementation has corresponding documentation that explains the theory, design decisions, and usage patterns.

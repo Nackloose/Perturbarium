@@ -7,7 +7,6 @@ This directory contains paradigms, best practices, and language-agnostic insight
 ## 📋 Navigation
 
 - **[`Coders-Guide-to-'Good'.md`](Coders-Guide-to-'Good'.md)** — A comprehensive framework for timeless software craftsmanship with 10 fundamental tenets and actionable guidelines.
-- **[`Evolution-Axia.md`](Evolution-Axia.md)** — The evolution and philosophy of Axia itself, documenting the journey and principles that shape this repository.
 
 ## 🎯 Purpose
 
@@ -15,6 +14,7 @@ These guides represent distilled wisdom — principles that have proven their va
 
 ## 🔗 Related Resources
 
+- **Axia**: Check [`../axia/`](../axia/) for foundational theoretical principles
 - **Theory**: Check [`../theory/`](../theory/) for foundational concepts
 - **Specifications**: See [`../specifications/`](../specifications/) for detailed technical specifications
 - **Implementations**: Explore [`../implementations/`](../implementations/) for working examples
