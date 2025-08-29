@@ -256,4 +256,4 @@ This is a research implementation. Contributions welcome for:
 
 ![SineScramble Performance Comparison](sinescramble_performance_comparison.png)
 
-**Figure:** Performance comparison of SineScramble cipher variants (Original, Optimized, Turbo) across different modes and data sizes. The plots show throughput (MB/s), memory efficiency, and scalability for both Segmented and Multi-Round modes. For a high-level overview, see the [main Axia README](../../README.md). 
+**Figure:** Performance comparison of SineScramble cipher variants (Original, Optimized, Turbo) across different modes and data sizes. The plots show throughput (MB/s), memory efficiency, and scalability for both Segmented and Multi-Round modes. For a high-level overview, see the [main Perturbarium README](../../README.md). 

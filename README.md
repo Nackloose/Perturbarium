@@ -1,5 +1,8 @@
-# **Axia**
-## A Living Codex of Enduring Principles — and a Breeding Ground for Paradigm-Shifting, Axiom-Altering Ideas
+# **Perturbarium**
+
+![Perturbarium Title](title.png)
+
+## A Container for Perturbations — Disturbances, Fluctuations, and Paradigm-Shifting Ideas
 
 **Version:** 4.1.0  
 **Date:** August 28, 2025  
@@ -7,7 +10,7 @@
 
 ---
 
-> Axia is a living codex: a dynamic archive of enduring principles for those who build, and a fertile breeding ground for paradigm-shifting, axiom-altering ideas, concepts, and conveyals.
+> Perturbarium is a container for perturbations: a dynamic environment where disturbances, fluctuations, and paradigm-shifting ideas are cultivated, studied, and allowed to evolve. It houses both the enduring principles that guide thoughtful programming and the radical concepts that challenge the very axioms of our craft.
 >
 > _My creative velocity far exceeds the practicalities of maintaining a multitude of repositories. This is an intentional effort to systematically aggregate the idiosyncratic, occasionally preposterous concepts I generate, rather than allowing them to dissipate across the vast digital expanse._
 >
@@ -17,9 +20,10 @@
 
 ## 📋 Table of Contents
 
+- [What is Perturbarium?](#what-is-perturbarium)
 - [What is Axia?](#what-is-axia)
 - [What is Inkspill?](#what-is-inkspill)
-- [Relationship Between Axia and Inkspill](#relationship-between-axia-and-inkspill)
+- [Relationship Between Perturbarium, Axia, and Inkspill](#relationship-between-perturbarium-axia-and-inkspill)
 - [📚 Contents](#contents)
   - [🧮 Axia (`axia/`)](#-axia-axia)
   - [🧠 Theory (`theory/`)](#-theory-theory)
@@ -34,17 +38,17 @@
 
 ---
 
-### What is Axia?
+### What is Perturbarium?
 
-**Axia** (from the Greek *ἀξία* — "value," "worth") is more than a repository of foundational principles that guide thoughtful programming, engineering, and design. It is a living, evolving reference for timeless truths, structural patterns, and the radical, paradigm-shifting ideas that challenge and reshape the very axioms of our craft.
+**Perturbarium** — the name fuses "perturbation" (a disturbance or fluctuation) with the "-arium" suffix found in "terrarium" or "planetarium," evoking a dedicated space for observation and cultivation. This is more than a repository: it is a contained environment where ideas are allowed to disturb, evolve, and sometimes revolutionize the field. Within this vessel, we nurture both the foundational principles that guide thoughtful programming and the radical concepts that challenge the very axioms of our craft.
 
 > *"A principle untested is just a well-dressed guess."*
 
-This is not just a vault for what endures, but a crucible for what could transform. Axia is where the half-baked, the half-mad, and the half-finished are welcomed alongside the distilled and the time-tested. If you've ever found yourself with a graveyard of abandoned repos and a head full of ideas that threaten to upend the status quo, welcome home.
+This is not just a vault for what endures, but a crucible for what could transform. Perturbarium is where the half-baked, the half-mad, and the half-finished are welcomed alongside the distilled and the time-tested. If you've ever found yourself with a graveyard of abandoned repos and a head full of ideas that threaten to upend the status quo, welcome home.
 
 > *"The best ideas arrive at 3 a.m., disguised as nonsense and wearing mismatched socks."*
 
-Axia is not a collection of fleeting trends. It is a guide to what **endures, inspires, questions, rearranges, and revolutionizes**. Its purpose is:
+Perturbarium is not a collection of fleeting trends. It is a container for what **endures, inspires, questions, rearranges, and revolutionizes**. Its purpose is:
 
 -   **To Distill** the architectural blueprints that persist through changing fashions.
 -   **To Explore** the philosophical underpinnings that inspire elegant systems.
@@ -58,6 +62,18 @@ It's also where frameworks, diagrams, and fever-dream scribbles are documented �
 > (And if the building never stops, at least organize the blueprints.)"*
 >
 > *"Every architecture diagram is just a treasure map for future confusion — or future revelation."*
+
+---
+
+### What is Axia?
+
+**Axia** (from the Greek *ἀξία* — "value," "worth") represents the foundational theoretical bedrock within the Perturbarium. It contains the mathematical principles and universal laws that underpin all other work — the enduring axioms that form the stable foundation upon which perturbations can safely occur.
+
+> *"Axia are the bedrock upon which all understanding is built. They are not proven, but they are the foundation from which all else follows."*
+
+The `axia/` folder contains the distilled, time-tested principles that provide the theoretical foundation for everything else in the Perturbarium. These are not mere guides or specifications, but the fundamental principles that make the container stable enough to house the more volatile perturbations.
+
+A perfect example of this is [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md), which rigorously develops the universal laws underlying all effective optimization algorithms. This document doesn't just summarize best practices—it establishes, from first principles, why certain algorithmic patterns must emerge in any successful search or optimization process. It proves, with mathematical clarity, that all adaptive search must obey three fundamental laws: Information Conservation, Selective Pressure, and Diversity Dynamics. By doing so, it provides a theoretical bedrock that not only supports the rest of the Perturbarium, but also challenges and inspires new directions for both theory and practice. If you want to see what "Axia" means in action, start there.
 
 ---
 
@@ -76,18 +92,21 @@ This is not a place for polish or permanence. It's where:
 - Notes, experiments, and sketches live freely
 - Paradigm-shifting seeds are sown, waiting to be cultivated
 
+A perfect illustration of Inkspill's purpose is [`inkspill/fft_compression_concept.md`](inkspill/fft_compression_concept.md). This document doesn't present a finished product or a proven theory; instead, it explores a bold, experimental approach to file compression using the Fast Fourier Transform (FFT). The concept is laid out in detail, but it remains speculative, inviting critique, iteration, and further development. It exemplifies how Inkspill serves as a safe space for ambitious, half-formed ideas—where technical imagination is encouraged to run ahead of implementation, and where even radical or unconventional proposals are welcome. Here, the value lies in the act of exploration itself: some ideas, like the FFT compression concept, may one day mature into robust frameworks or inspire new paradigms; others may simply spark discussion or serve as stepping stones for future breakthroughs.
+
 > *"Some notes are just future footnotes to a story you haven't written yet. Some are the first lines of a new chapter in the field."*
 
 Some of these spills will evolve into structured truths or even new paradigms. Some won't. That's the point.
 
 ---
 
-## Relationship Between Axia and Inkspill
+## Relationship Between Perturbarium, Axia, and Inkspill
 
-If **Axia** is the canon — the distilled, enduring truths and the evolving axioms —  
+If **Perturbarium** is the container — the controlled environment where ideas can safely perturb and evolve —  
+**Axia** is the stable foundation within that container, providing the theoretical bedrock that makes the perturbations meaningful.  
 **Inkspill** is the creative chaos and generative ground that comes before, where new paradigms are born and tested.
 
-Ideas are spilled here, sifted, then (sometimes) shaped into something worthy of lasting value — or even capable of shifting the very foundations.
+Ideas are spilled in Inkspill, sifted, then (sometimes) shaped into something worthy of lasting value in Axia — or even capable of shifting the very foundations of the Perturbarium itself.
 
 > *"Everything sharp was once a blur."*
 >
@@ -121,7 +140,7 @@ Ideas are spilled here, sifted, then (sometimes) shaped into something worthy of
 
 ## 📚 Contents
 
-Axia is organized by its core domains of inquiry, and now includes the Inkspill folder for all the raw, in-progress, and unfiltered material — the breeding ground for the next paradigm shift.
+Perturbarium is organized by its core domains of inquiry, with Axia providing the foundational bedrock, and Inkspill serving as the creative workspace for all the raw, in-progress, and unfiltered material — the breeding ground for the next paradigm shift.
 
 ### 🧮 Axia (`axia/`)
 The foundational theoretical bedrock — mathematical principles and universal laws that underpin all other work.
@@ -201,7 +220,7 @@ Each implementation has corresponding documentation that explains the theory, de
 
 ### Contributing
 
-Axia grows slowly and deliberately, but always with an eye toward the next leap. Contributions are welcome, especially those that represent enduring wisdom or the seeds of paradigm-shifting, axiom-altering insight. If you are also haunted by the need to catalog the principles you uncover — or to plant the seeds of the next big shift — you will fit right in.
+Perturbarium grows slowly and deliberately, but always with an eye toward the next leap. Contributions are welcome, especially those that represent enduring wisdom or the seeds of paradigm-shifting, axiom-altering insight. If you are also haunted by the need to catalog the principles you uncover — or to plant the seeds of the next big shift — you will fit right in.
 
 > *"Pull requests are just love letters to the future maintainers — and sometimes, to the future of the field."*
 
@@ -227,13 +246,15 @@ Copyright unless stated otherwise until I have time to deal with this
 
 ### 🏷️ On The Name
 
-The name **Axia** comes from the Greek *ἀξία*, meaning **value** or **worth**. It reflects the repository's mission: to preserve what is essential, not just what is new — and to nurture the ideas that may one day redefine what is essential.
+The name **Perturbarium** comes from "perturbation" — a disturbance, fluctuation, or deviation from a regular pattern. It reflects the repository's mission: to provide a contained environment where ideas can safely perturb, evolve, and sometimes revolutionize the field. Within this container, we preserve what is essential while nurturing the ideas that may one day redefine what is essential.
 
-Besides, "The Repository Of Things That Won't Stop Pouring Out Of My Brain" was too long.  
-And "Centralized Dumping Ground For The Endless Crap I Think Of" didn't look as good on a resume.
-
-> *"Naming things is hard. Naming everything is impossible. Welcome to Axia — where even the name might one day evolve."*
+**Axia** (from the Greek *ἀξία*, meaning **value** or **worth**) represents the stable foundation within the Perturbarium — the enduring principles that make the container safe for more volatile perturbations.
 
 **Inkspill** is exactly what it sounds like: the mess before the meaning, the blur before the sharpness, the place where everything starts but nothing has to finish — and where the next paradigm shift might be scribbled in the margins.
 
 > *"Every masterpiece begins as a mess. Sometimes it stays that way, and that's beautiful too. Sometimes, the mess becomes the new masterpiece."*
+
+Besides, "The Repository Of Things That Won't Stop Pouring Out Of My Brain" was too long.  
+And "Centralized Dumping Ground For The Endless Crap I Think Of" didn't look as good on a resume.
+
+> *"Naming things is hard. Naming everything is impossible. Welcome to Perturbarium — where even the name might one day evolve."*

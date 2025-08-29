@@ -1,8 +1,8 @@
 # 🧮 Axia
 
-> *"Axioms are the bedrock upon which all understanding is built. They are not proven, but they are the foundation from which all else follows."*
+> *"Axia are the bedrock upon which all understanding is built. They are not proven, but they are the foundation from which all else follows."*
 
-This directory contains the foundational theoretical axioms that form the mathematical and philosophical bedrock of Axia. These are not mere guides or specifications, but the fundamental principles that underpin all other work in this repository.
+This directory contains the foundational theoretical axioms that form the mathematical and philosophical bedrock of the Perturbarium. These are not mere guides or specifications, but the fundamental principles that underpin all other work in this repository and provide the stable foundation upon which perturbations can safely occur.
 
 ## 📋 Navigation
 
@@ -10,21 +10,22 @@ This directory contains the foundational theoretical axioms that form the mathem
 
 ## 🎯 Purpose
 
-These axioms represent:
+Within the Perturbarium container, Axia represents:
 - **Mathematical Foundations**: Rigorous proofs and theorems that establish fundamental limits and principles
 - **Philosophical Bedrock**: Core assumptions and principles that guide all other work
 - **Theoretical Core**: The deepest level of understanding that everything else builds upon
 - **Universal Truths**: Principles that transcend specific implementations or domains
+- **Stable Foundation**: The enduring axioms that make the container safe for more volatile perturbations
 
 ## 🔗 Relationship to Other Directories
 
-The axioms form the foundation that supports all other work:
+The axioms form the foundation that supports all other work within the Perturbarium:
 
 ```
-Axia (this directory)
-    ↓ foundational principles
+Axia (this directory - foundational bedrock)
+    ↓ theoretical foundation
 Theory (mathematical applications)
-    ↓ theoretical frameworks
+    ↓ applied principles
 Specifications (technical blueprints)
     ↓ implementation guidance
 Implementations (working code)
@@ -54,6 +55,7 @@ The work in this directory represents:
 - **Universal Applicability**: Principles that apply across all optimization domains
 - **Predictive Power**: Theoretical frameworks that can predict algorithmic performance
 - **Foundational Understanding**: Deep insights into why certain approaches succeed or fail
+- **Container Stability**: The enduring principles that make the Perturbarium a safe environment for idea evolution
 
 ## 💭 Contributing
 
@@ -62,6 +64,12 @@ Contributions to axioms should:
 - Provide proofs or strong theoretical foundations
 - Have universal applicability across domains
 - Challenge or extend existing understanding
-- Serve as the foundation for other work
+- Serve as the foundation for other work within the Perturbarium
 
 > *"An axiom is not just a statement we believe to be true — it is a principle so fundamental that questioning it would require questioning the very nature of the field itself."*
+
+## 🏗️ Role in the Perturbarium
+
+Axia serves as the stable foundation within the Perturbarium container. While other areas of the repository may contain volatile, experimental, or evolving ideas, Axia provides the bedrock principles that ensure the container remains coherent and meaningful. It is the anchor that allows perturbations to occur without losing sight of fundamental truths.
+
+> *"In a world of constant change, some principles must remain constant. Axia is where we preserve those principles."*

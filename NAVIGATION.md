@@ -2,6 +2,9 @@
 
 ## 📋 Quick Reference
 
+### 🧮 Foundational Axioms (`axia/`)
+- **`Evolution-Axiom.md`** - The Fundamental Laws of Adaptive Search: Three universal laws that govern all effective optimization algorithms
+
 ### 🧠 Theoretical Papers (`theory/`)
 - **`gdiff.md`** - Machine-readable diff format specification  
 - **`Reverse-Publickey-Identity-Verification[RPIV].md`** - Inverted asymmetric cryptography
@@ -43,6 +46,7 @@
 - **Coding Best Practices**: Read `guides/Coders-Guide-to-'Good'.md`
 - **Evolutionary Algorithms**: Explore `theory/xof-genetics.md` and `implementations/xof-genetics/`
 - **AI Development**: Check `implementations/claude-agents/`
+- **Fundamental Laws**: Study `axia/Evolution-Axiom.md` for optimization axioms
 
 ### I want to run something...
 - **Cipher Demo**: `implementations/sinescramble/demo.py`
@@ -53,6 +57,7 @@
 - **Interactive Game**: `inkspill/slots.html`
 
 ### I want to understand the theory...
+- **Fundamental Laws**: `axia/Evolution-Axiom.md` for optimization axioms
 - **Evolutionary Algorithms**: `theory/xof-genetics.md`
 - **Diff Formats**: `theory/gdiff.md`
 - **Identity Verification**: `theory/Reverse-Publickey-Identity-Verification[RPIV].md`
@@ -62,23 +67,27 @@
 ## 🔗 Project Relationships
 
 ```
-SineShift (permutation) 
-    ↓ used by
-SineScramble (cipher)
-    ↓ used by  
-Licensee (licensing)
-    ↓ independent
-Instamaster (audio)
-    ↓ independent
-XOF-Genetics (evolution)
-    ↓ independent
-Claude-Agents (AI automation)
+Axia (foundational laws)
+    ↓ theoretical foundation
+Theory (mathematical frameworks)
+    ↓ applied principles
+Specifications (technical blueprints)
+    ↓ implementation guidance
+Implementations (working code)
+    ↓ practical validation
+Guides (best practices)
+    ↓ distilled wisdom
+Inkspill (creative exploration)
+    ↓ experimental ideas
 ```
 
 ## 📁 Directory Structure
 
 ```
-Axia/
+Perturbarium/
+├── axia/                      # Foundational theoretical axioms
+│   ├── Evolution-Axiom.md     # Fundamental laws of optimization
+│   └── README.md              # Axia overview and purpose
 ├── theory/                    # Theoretical foundations
 │   ├── gdiff.md              # Machine-readable diff format
 │   ├── xof-genetics.md       # Genetic algorithms with crypto
@@ -103,6 +112,7 @@ Axia/
 │   ├── react-mono.md         # React architecture
 │   ├── slots.html            # Interactive game
 │   └── notes/                # Raw thoughts
+├── README.md                  # Main repository overview
 └── NAVIGATION.md             # This file
 ```
 
@@ -159,9 +169,16 @@ cd specifications && cat [project].md
 4. `implementations/claude-agents/`
 
 ### Algorithm Designer
-1. `theory/xof-genetics.md`
-2. `implementations/xof-genetics/`
-3. `specifications/SineShift.md`
-4. `specifications/SineScramble.md`
+1. `axia/Evolution-Axiom.md` (fundamental laws)
+2. `theory/xof-genetics.md`
+3. `implementations/xof-genetics/`
+4. `specifications/SineShift.md`
+5. `specifications/SineScramble.md`
 
-Each implementation has corresponding documentation that explains the theory, design decisions, and usage patterns. 
+### Theoretical Foundation Seeker
+1. `axia/Evolution-Axiom.md` (start with the bedrock)
+2. `theory/` (explore mathematical frameworks)
+3. `specifications/` (see theory applied)
+4. `implementations/` (witness theory in action)
+
+Each implementation has corresponding documentation that explains the theory, design decisions, and usage patterns. The Perturbarium provides a contained environment where ideas can safely evolve from raw concepts in Inkspill to foundational axioms in Axia. 
