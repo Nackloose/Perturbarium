@@ -73,7 +73,9 @@ It's also where frameworks, diagrams, and fever-dream scribbles are documented �
 
 The `axia/` folder contains the distilled, time-tested principles that provide the theoretical foundation for everything else in the Perturbarium. These are not mere guides or specifications, but the fundamental principles that make the container stable enough to house the more volatile perturbations.
 
-A perfect example of this is [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md), which rigorously develops the universal laws underlying all effective optimization algorithms. This document doesn't just summarize best practices—it establishes, from first principles, why certain algorithmic patterns must emerge in any successful search or optimization process. It proves, with mathematical clarity, that all adaptive search must obey three fundamental laws: Information Conservation, Selective Pressure, and Diversity Dynamics. By doing so, it provides a theoretical bedrock that not only supports the rest of the Perturbarium, but also challenges and inspires new directions for both theory and practice. If you want to see what "Axia" means in action, start there.
+A perfect example of this is [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md), which rigorously develops the universal laws underlying genetic evolution and self-evolving computation systems. This document doesn't just summarize best practices—it establishes, from first principles, why certain evolutionary patterns must emerge in any successful genetic search or self-evolving system. It proves, with mathematical clarity, the fundamental laws that govern genetic evolution, search spaces, and self-evolving computation. By doing so, it provides a theoretical bedrock that not only supports the rest of the Perturbarium, but also challenges and inspires new directions for both theory and practice. If you want to see what "Axia" means in action, start there.
+
+The foundation of all axioms is established in [`axia/Axia-Axiom.md`](axia/Axia-Axiom.md), which defines the five fundamental criteria that any statement must satisfy to qualify as an Axia: Universality, Indivisibility, Necessity, Transcendence, and Generative Power. This meta-axiom serves as the bedrock upon which all other axioms are built, ensuring that only truly foundational principles qualify for axiomatic status.
 
 ---
 
@@ -122,7 +124,7 @@ Ideas are spilled in Inkspill, sifted, then (sometimes) shaped into something wo
 - **Software Licensing**: See [`specifications/Licensee.md`](specifications/Licensee.md) and [`implementations/licensee/`](implementations/licensee/)
 - **Data Permutation**: Review [`specifications/SineShift.md`](specifications/SineShift.md) and [`implementations/sineshift/`](implementations/sineshift/)
 - **Coding Best Practices**: Read [`guides/Coders-Guide-to-'Good'.md`](guides/Coders-Guide-to-'Good'.md)
-- **Optimization Theory**: Explore [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for fundamental laws
+- **Evolutionary Systems**: Explore [`axia/Axia-Axiom.md`](axia/Axia-Axiom.md) for axiomatic criteria and [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for genetic evolution laws
 
 ### I want to run something...
 - **Cipher Demo**: [`implementations/sinescramble/demo.py`](implementations/sinescramble/demo.py)
@@ -131,7 +133,7 @@ Ideas are spilled in Inkspill, sifted, then (sometimes) shaped into something wo
 - **Permutation Analysis**: [`implementations/sineshift/run.sh`](implementations/sineshift/run.sh)
 
 ### I want to understand the theory...
-- **Fundamental Laws**: [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for optimization axioms
+- **Fundamental Laws**: [`axia/Axia-Axiom.md`](axia/Axia-Axiom.md) for axiomatic criteria and [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for genetic evolution axioms
 - **Evolutionary Algorithms**: [`theory/xof-genetics.md`](theory/xof-genetics.md)
 - **Diff Formats**: [`theory/gdiff.md`](theory/gdiff.md)
 - **Identity Verification**: [`theory/Reverse-Publickey-Identity-Verification[RPIV].md`](theory/Reverse-Publickey-Identity-Verification[RPIV].md)
@@ -145,7 +147,8 @@ Perturbarium is organized by its core domains of inquiry, with Axia providing th
 ### 🧮 Axia (`axia/`)
 The foundational theoretical bedrock — mathematical principles and universal laws that underpin all other work.
 
--   [`Evolution-Axiom.md`](axia/Evolution-Axiom.md) — The Fundamental Laws of Adaptive Search: A rigorous mathematical treatment establishing the three fundamental laws that govern all effective optimization algorithms.
+-   [`Axia-Axiom.md`](axia/Axia-Axiom.md) — The Fundamental Criteria for Axiomatic Truth: Establishes the five fundamental criteria that any statement must satisfy to qualify as an Axia—Universality, Indivisibility, Necessity, Transcendence, and Generative Power.
+-   [`Evolution-Axiom.md`](axia/Evolution-Axiom.md) — The Fundamental Laws of Genetic Evolution: A rigorous mathematical treatment establishing the laws that govern self-evolving computation systems and genetic search spaces.
 
 ### 🧠 Theory (`theory/`)
 Schemas, design systems, and aesthetic principles.

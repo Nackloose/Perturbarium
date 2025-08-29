@@ -3,7 +3,8 @@
 ## 📋 Quick Reference
 
 ### 🧮 Foundational Axioms (`axia/`)
-- **`Evolution-Axiom.md`** - The Fundamental Laws of Adaptive Search: Three universal laws that govern all effective optimization algorithms
+- **`Axia-Axiom.md`** - The Fundamental Criteria for Axiomatic Truth: Five criteria that define what makes an axiom an axiom
+- **`Evolution-Axiom.md`** - The Fundamental Laws of Genetic Evolution: Laws that govern self-evolving computation systems and genetic search spaces
 
 ### 🧠 Theoretical Papers (`theory/`)
 - **`gdiff.md`** - Machine-readable diff format specification  
@@ -46,7 +47,7 @@
 - **Coding Best Practices**: Read `guides/Coders-Guide-to-'Good'.md`
 - **Evolutionary Algorithms**: Explore `theory/xof-genetics.md` and `implementations/xof-genetics/`
 - **AI Development**: Check `implementations/claude-agents/`
-- **Fundamental Laws**: Study `axia/Evolution-Axiom.md` for optimization axioms
+- **Fundamental Laws**: Study `axia/Axia-Axiom.md` for axiomatic criteria and `axia/Evolution-Axiom.md` for genetic evolution axioms
 
 ### I want to run something...
 - **Cipher Demo**: `implementations/sinescramble/demo.py`
@@ -57,7 +58,7 @@
 - **Interactive Game**: `inkspill/slots.html`
 
 ### I want to understand the theory...
-- **Fundamental Laws**: `axia/Evolution-Axiom.md` for optimization axioms
+- **Fundamental Laws**: `axia/Axia-Axiom.md` for axiomatic criteria and `axia/Evolution-Axiom.md` for genetic evolution axioms
 - **Evolutionary Algorithms**: `theory/xof-genetics.md`
 - **Diff Formats**: `theory/gdiff.md`
 - **Identity Verification**: `theory/Reverse-Publickey-Identity-Verification[RPIV].md`
@@ -86,7 +87,8 @@ Inkspill (creative exploration)
 ```
 Perturbarium/
 ├── axia/                      # Foundational theoretical axioms
-│   ├── Evolution-Axiom.md     # Fundamental laws of optimization
+│   ├── Axia-Axiom.md          # Criteria for axiomatic truth
+│   ├── Evolution-Axiom.md     # Fundamental laws of genetic evolution
 │   └── README.md              # Axia overview and purpose
 ├── theory/                    # Theoretical foundations
 │   ├── gdiff.md              # Machine-readable diff format
@@ -169,16 +171,18 @@ cd specifications && cat [project].md
 4. `implementations/claude-agents/`
 
 ### Algorithm Designer
-1. `axia/Evolution-Axiom.md` (fundamental laws)
-2. `theory/xof-genetics.md`
-3. `implementations/xof-genetics/`
-4. `specifications/SineShift.md`
-5. `specifications/SineScramble.md`
+1. `axia/Axia-Axiom.md` (axiomatic criteria)
+2. `axia/Evolution-Axiom.md` (genetic evolution laws)
+3. `theory/xof-genetics.md`
+4. `implementations/xof-genetics/`
+5. `specifications/SineShift.md`
+6. `specifications/SineScramble.md`
 
 ### Theoretical Foundation Seeker
-1. `axia/Evolution-Axiom.md` (start with the bedrock)
-2. `theory/` (explore mathematical frameworks)
-3. `specifications/` (see theory applied)
-4. `implementations/` (witness theory in action)
+1. `axia/Axia-Axiom.md` (start with the meta-axiom)
+2. `axia/Evolution-Axiom.md` (genetic evolution laws)
+3. `theory/` (explore mathematical frameworks)
+4. `specifications/` (see theory applied)
+5. `implementations/` (witness theory in action)
 
 Each implementation has corresponding documentation that explains the theory, design decisions, and usage patterns. The Perturbarium provides a contained environment where ideas can safely evolve from raw concepts in Inkspill to foundational axioms in Axia. 

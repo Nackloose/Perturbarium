@@ -6,7 +6,8 @@ This directory contains the foundational theoretical axioms that form the mathem
 
 ## 📋 Navigation
 
-- **[`Evolution-Axiom.md`](Evolution-Axiom.md)** — The Fundamental Laws of Adaptive Search: A rigorous mathematical treatment establishing the three fundamental laws that govern all effective optimization algorithms.
+- **[`Axia-Axiom.md`](Axia-Axiom.md)** — The Fundamental Criteria for Axiomatic Truth: Establishes the five fundamental criteria that any statement must satisfy to qualify as an Axia—Universality, Indivisibility, Necessity, Transcendence, and Generative Power.
+- **[`Evolution-Axiom.md`](Evolution-Axiom.md)** — The Fundamental Laws of Genetic Evolution: A rigorous mathematical treatment establishing the laws that govern self-evolving computation systems and genetic search spaces.
 
 ## 🎯 Purpose
 
@@ -38,7 +39,7 @@ Inkspill (creative exploration)
 
 ## 💡 The Three Fundamental Laws
 
-The `Evolution-Axiom.md` paper establishes three universal laws that govern all effective optimization:
+The `Evolution-Axiom.md` paper establishes the fundamental laws that govern genetic evolution and self-evolving computation systems:
 
 1. **The Law of Information Conservation**: Any effective optimization algorithm must conserve and utilize information gained from previous evaluations.
 
