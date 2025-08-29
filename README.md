@@ -148,6 +148,7 @@ Perturbarium is organized by its core domains of inquiry, with Axia providing th
 The foundational theoretical bedrock — mathematical principles and universal laws that underpin all other work.
 
 -   [`Axia-Axiom.md`](axia/Axia-Axiom.md) — The Fundamental Criteria for Axiomatic Truth: Establishes the five fundamental criteria that any statement must satisfy to qualify as an Axia—Universality, Indivisibility, Necessity, Transcendence, and Generative Power.
+-   [`Axia-Axiom.simple.md`](axia/Axia-Axiom.simple.md) — The Simple Version: Plain English explanation of what makes an axiom an axiom with real-world examples.
 -   [`Evolution-Axiom.md`](axia/Evolution-Axiom.md) — The Fundamental Laws of Genetic Evolution: A rigorous mathematical treatment establishing the laws that govern self-evolving computation systems and genetic search spaces.
 -   [`Evolution-Axiom.simple.md`](axia/Evolution-Axiom.simple.md) — The Simple Version: Plain English explanation of genetic evolution and self-evolving computers with real-world examples.
 

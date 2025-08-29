@@ -4,6 +4,7 @@
 
 ### 🧮 Foundational Axioms (`axia/`)
 - **`Axia-Axiom.md`** - The Fundamental Criteria for Axiomatic Truth: Five criteria that define what makes an axiom an axiom
+- **`Axia-Axiom.simple.md`** - The Simple Version: Plain English explanation with real-world examples
 - **`Evolution-Axiom.md`** - The Fundamental Laws of Genetic Evolution: Laws that govern self-evolving computation systems and genetic search spaces
 - **`Evolution-Axiom.simple.md`** - The Simple Version: Plain English explanation with real-world examples
 
@@ -89,6 +90,7 @@ Inkspill (creative exploration)
 Perturbarium/
 ├── axia/                      # Foundational theoretical axioms
 │   ├── Axia-Axiom.md          # Criteria for axiomatic truth
+│   ├── Axia-Axiom.simple.md   # Simple version in plain English
 │   ├── Evolution-Axiom.md     # Fundamental laws of genetic evolution
 │   ├── Evolution-Axiom.simple.md # Simple version in plain English
 │   └── README.md              # Axia overview and purpose
