@@ -8,6 +8,7 @@ This directory contains the foundational theoretical axioms that form the mathem
 
 - **[`Axia-Axiom.md`](Axia-Axiom.md)** — The Fundamental Criteria for Axiomatic Truth: Establishes the five fundamental criteria that any statement must satisfy to qualify as an Axia—Universality, Indivisibility, Necessity, Transcendence, and Generative Power.
 - **[`Evolution-Axiom.md`](Evolution-Axiom.md)** — The Fundamental Laws of Genetic Evolution: A rigorous mathematical treatment establishing the laws that govern self-evolving computation systems and genetic search spaces.
+- **[`Evolution-Axiom.simple.md`](Evolution-Axiom.simple.md)** — The Simple Version: Plain English explanation of how genetic evolution and self-evolving computers work, with real-world examples and practical applications.
 
 ## 🎯 Purpose
 
