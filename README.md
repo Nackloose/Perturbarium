@@ -4,8 +4,10 @@
 
 ## A Container for Perturbations — Disturbances, Fluctuations, and Paradigm-Shifting Ideas
 
-**Version:** 4.1.0  
-**Date:** August 28, 2025  
+> *"Welcome to the beehive of my mind, where thoughts flow like water and ideas explode like fireworks."* — [Where Am I?](where-am-i.md)
+
+**Version:** 5.0.0
+**Date:** August 29, 2025  
 **Authors:** N Lisowski
 
 ---

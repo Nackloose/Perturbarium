@@ -1,5 +1,7 @@
 # Navigation Guide
 
+> *"Welcome to the beehive of my mind, where thoughts flow like water and ideas explode like fireworks."* — [Where Am I?](where-am-i.md)
+
 ## 📋 Quick Reference
 
 ### 🧮 Foundational Axioms (`axia/`)
