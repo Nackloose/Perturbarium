@@ -128,6 +128,7 @@ Ideas are spilled in Inkspill, sifted, then (sometimes) shaped into something wo
 - **Data Permutation**: Review [`specifications/SineShift.md`](specifications/SineShift.md) and [`implementations/sineshift/`](implementations/sineshift/)
 - **Coding Best Practices**: Read [`guides/Coders-Guide-to-'Good'.md`](guides/Coders-Guide-to-'Good'.md)
 - **Evolutionary Systems**: Explore [`axia/Axia-Axiom.md`](axia/Axia-Axiom.md) for axiomatic criteria and [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for genetic evolution laws
+- **Software Implementation**: Study [`axia/Implementation-Axiom.md`](axia/Implementation-Axiom.md) for universal implementation principles
 
 ### I want to run something...
 - **Cipher Demo**: [`implementations/sinescramble/demo.py`](implementations/sinescramble/demo.py)
@@ -137,6 +138,7 @@ Ideas are spilled in Inkspill, sifted, then (sometimes) shaped into something wo
 
 ### I want to understand the theory...
 - **Fundamental Laws**: [`axia/Axia-Axiom.md`](axia/Axia-Axiom.md) for axiomatic criteria and [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for genetic evolution axioms
+- **Implementation Principles**: [`axia/Implementation-Axiom.md`](axia/Implementation-Axiom.md) for software development laws
 - **Evolutionary Algorithms**: [`theory/xof-genetics.md`](theory/xof-genetics.md)
 - **Diff Formats**: [`theory/gdiff.md`](theory/gdiff.md)
 - **Identity Verification**: [`theory/Reverse-Publickey-Identity-Verification[RPIV].md`](theory/Reverse-Publickey-Identity-Verification[RPIV].md)
@@ -154,6 +156,8 @@ The foundational theoretical bedrock — mathematical principles and universal l
 -   [`Axia-Axiom.simple.md`](axia/Axia-Axiom.simple.md) — The Simple Version: Plain English explanation of what makes an axiom an axiom with real-world examples.
 -   [`Evolution-Axiom.md`](axia/Evolution-Axiom.md) — The Fundamental Laws of Genetic Evolution: A rigorous mathematical treatment establishing the laws that govern self-evolving computation systems and genetic search spaces.
 -   [`Evolution-Axiom.simple.md`](axia/Evolution-Axiom.simple.md) — The Simple Version: Plain English explanation of genetic evolution and self-evolving computers with real-world examples.
+-   [`Implementation-Axiom.md`](axia/Implementation-Axiom.md) — The Fundamental Laws of Software Implementation: Establishes the universal principles that govern successful software development and system architecture.
+-   [`Implementation-Axiom.simple.md`](axia/Implementation-Axiom.simple.md) — The Simple Version: Plain English explanation of implementation principles with real-world examples.
 
 ### 🧠 Theory (`theory/`)
 Schemas, design systems, and aesthetic principles.
@@ -194,6 +198,11 @@ The creative mess: drafts, notes, fragments, experiments, and half-formed though
 -   [`react-mono.md`](inkspill/react-mono.md) — React monorepo architecture and patterns
 -   [`slots.html`](inkspill/slots.html) — Interactive slots game implementation
 -   [`notes/`](inkspill/notes/) — Raw thoughts, outlines, observations, and experimental fragments
+
+### 📄 Additional Files
+-   [`where-am-i.md`](where-am-i.md) — Welcome to the Concoction of My Mind
+-   [`NAVIGATION.md`](NAVIGATION.md) — Navigation Guide for the Perturbarium
+-   [`RULEBOOK.md`](RULEBOOK.md) — Rules, guidelines, and principles that govern the Perturbarium
 
 > *"Folders are just boxes for ideas that refuse to sit still — and sometimes, for ideas that want to break out and change everything."*
 

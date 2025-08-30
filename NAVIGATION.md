@@ -11,6 +11,8 @@
 - **`Axia-Axiom.simple.md`** - The Simple Version: Plain English explanation with real-world examples
 - **`Evolution-Axiom.md`** - The Fundamental Laws of Genetic Evolution: Laws that govern self-evolving computation systems and genetic search spaces
 - **`Evolution-Axiom.simple.md`** - The Simple Version: Plain English explanation with real-world examples
+- **`Implementation-Axiom.md`** - The Fundamental Laws of Software Implementation: Universal principles that govern successful software development
+- **`Implementation-Axiom.simple.md`** - The Simple Version: Plain English explanation with real-world examples
 
 ### 🧠 Theoretical Papers (`theory/`)
 - **`gdiff.md`** - Machine-readable diff format specification  
@@ -25,7 +27,6 @@
 
 ### 📖 Development Guides (`guides/`)
 - **`Coders-Guide-to-'Good'.md`** - Comprehensive software craftsmanship framework
-- **`Evolution-Axia.md`** - The evolution and philosophy of Axia itself
 
 ### 🔧 Working Implementations (`implementations/`)
 - **`sinescramble/`** - Complete cipher implementation with performance tools and Tamarin Prover analysis
@@ -43,6 +44,11 @@
 - **`slots.html`** - Interactive slots game implementation
 - **`notes/`** - Raw thoughts, outlines, observations, and experimental fragments
 
+### 📄 Additional Files
+- **`where-am-i.md`** - Welcome to the Concoction of My Mind
+- **`NAVIGATION.md`** - This navigation guide
+- **`RULEBOOK.md`** - Rules, guidelines, and principles that govern the Perturbarium
+
 ## 🎯 Finding What You Need
 
 ### I want to learn about...
@@ -54,6 +60,7 @@
 - **Evolutionary Algorithms**: Explore `theory/xof-genetics.md` and `implementations/xof-genetics/`
 - **AI Development**: Check `implementations/claude-agents/`
 - **Fundamental Laws**: Study `axia/Axia-Axiom.md` for axiomatic criteria and `axia/Evolution-Axiom.md` for genetic evolution axioms
+- **Software Implementation**: Study `axia/Implementation-Axiom.md` for universal implementation principles
 
 ### I want to run something...
 - **Cipher Demo**: `implementations/sinescramble/demo.py`
@@ -65,6 +72,7 @@
 
 ### I want to understand the theory...
 - **Fundamental Laws**: `axia/Axia-Axiom.md` for axiomatic criteria and `axia/Evolution-Axiom.md` for genetic evolution axioms
+- **Implementation Principles**: `axia/Implementation-Axiom.md` for software development laws
 - **Evolutionary Algorithms**: `theory/xof-genetics.md`
 - **Diff Formats**: `theory/gdiff.md`
 - **Identity Verification**: `theory/Reverse-Publickey-Identity-Verification[RPIV].md`
@@ -97,6 +105,8 @@ Perturbarium/
 │   ├── Axia-Axiom.simple.md   # Simple version in plain English
 │   ├── Evolution-Axiom.md     # Fundamental laws of genetic evolution
 │   ├── Evolution-Axiom.simple.md # Simple version in plain English
+│   ├── Implementation-Axiom.md # Fundamental laws of software implementation
+│   ├── Implementation-Axiom.simple.md # Simple version in plain English
 │   └── README.md              # Axia overview and purpose
 ├── theory/                    # Theoretical foundations
 │   ├── gdiff.md              # Machine-readable diff format
@@ -108,8 +118,7 @@ Perturbarium/
 │   ├── Licensee.md           # Licensing system
 │   └── Instamaster.md        # Audio mastering
 ├── guides/                    # Best practices and philosophy
-│   ├── Coders-Guide-to-'Good'.md
-│   └── Evolution-Axia.md
+│   └── Coders-Guide-to-'Good'.md
 ├── implementations/           # Working code
 │   ├── sinescramble/         # Cipher implementation
 │   ├── sineshift/            # Permutation tools
@@ -119,9 +128,13 @@ Perturbarium/
 │   └── claude-agents/        # AI frameworks
 ├── inkspill/                  # Creative workspace
 │   ├── assembly-tracer.md    # Assembly analysis
+│   ├── assembly-tracer.spec.md # Assembly specification
+│   ├── fft_compression_concept.md # FFT compression concepts
 │   ├── react-mono.md         # React architecture
 │   ├── slots.html            # Interactive game
 │   └── notes/                # Raw thoughts
+├── where-am-i.md             # Welcome to the mind
+├── RULEBOOK.md               # Rules and principles
 ├── README.md                  # Main repository overview
 └── NAVIGATION.md             # This file
 ```
@@ -181,16 +194,18 @@ cd specifications && cat [project].md
 ### Algorithm Designer
 1. `axia/Axia-Axiom.md` (axiomatic criteria)
 2. `axia/Evolution-Axiom.md` (genetic evolution laws)
-3. `theory/xof-genetics.md`
-4. `implementations/xof-genetics/`
-5. `specifications/SineShift.md`
-6. `specifications/SineScramble.md`
+3. `axia/Implementation-Axiom.md` (implementation principles)
+4. `theory/xof-genetics.md`
+5. `implementations/xof-genetics/`
+6. `specifications/SineShift.md`
+7. `specifications/SineScramble.md`
 
 ### Theoretical Foundation Seeker
 1. `axia/Axia-Axiom.md` (start with the meta-axiom)
 2. `axia/Evolution-Axiom.md` (genetic evolution laws)
-3. `theory/` (explore mathematical frameworks)
-4. `specifications/` (see theory applied)
-5. `implementations/` (witness theory in action)
+3. `axia/Implementation-Axiom.md` (implementation principles)
+4. `theory/` (explore mathematical frameworks)
+5. `specifications/` (see theory applied)
+6. `implementations/` (witness theory in action)
 
 Each implementation has corresponding documentation that explains the theory, design decisions, and usage patterns. The Perturbarium provides a contained environment where ideas can safely evolve from raw concepts in Inkspill to foundational axioms in Axia. 
