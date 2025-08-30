@@ -61,6 +61,7 @@ So here you are, standing at the entrance to my living architecture, my flowing 
 - **Sit and watch** the fireworks for a while, marveling at the explosions of insight
 - **Add your own thoughts** to the hive, contribute to the chaos, help build something new
 - **Take what you need** and leave the rest—because not every idea is for everyone
+- **Read the [Rulebook](RULEBOOK.md)** to understand the principles that guide this chaos
 
 I don't expect you to understand everything. I don't understand everything myself. But I hope you find something here that makes you think, that makes you wonder, that makes you smile, that makes you want to push against your own boundaries and see what happens.
 

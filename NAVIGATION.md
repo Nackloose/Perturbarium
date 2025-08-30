@@ -1,6 +1,8 @@
 # Navigation Guide
 
-> *"Welcome to the beehive of my mind, where thoughts flow like water and ideas explode like fireworks."* — [Where Am I?](where-am-i.md)
+> *"Welcome to the carnival of my mind, where thoughts flow like water and ideas explode like fireworks."* — [Where Am I?](where-am-i.md)
+
+> *"For the complete set of rules and principles that govern this chaos, see the [Rulebook](RULEBOOK.md)."*
 
 ## 📋 Quick Reference
 

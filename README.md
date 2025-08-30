@@ -4,7 +4,7 @@
 
 ## A Container for Perturbations — Disturbances, Fluctuations, and Paradigm-Shifting Ideas
 
-> *"Welcome to the beehive of my mind, where thoughts flow like water and ideas explode like fireworks."* — [Where Am I?](where-am-i.md)
+> *"Welcome to the carnival of my mind, where thoughts flow like water and ideas explode like fireworks."* — [Where Am I?](where-am-i.md)
 
 **Version:** 5.0.0
 **Date:** August 29, 2025  
@@ -37,6 +37,7 @@
 - [🤝 Contributing](#contributing)
 - [📄 License](#license)
 - [🏷️ On The Name](#️-on-the-name)
+- [📜 Rulebook](#-rulebook)
 
 ---
 
@@ -265,3 +266,11 @@ Besides, "The Repository Of Things That Won't Stop Pouring Out Of My Brain" was 
 And "Centralized Dumping Ground For The Endless Crap I Think Of" didn't look as good on a resume.
 
 > *"Naming things is hard. Naming everything is impossible. Welcome to Perturbarium — where even the name might one day evolve."*
+
+---
+
+## 📜 Rulebook
+
+For the complete set of rules, guidelines, and principles that govern the Perturbarium, see the [**Rulebook**](RULEBOOK.md). This document contains the foundational principles, coding standards, contribution guidelines, and philosophical framework that guide all work within this repository.
+
+> *"Rules are not cages, but compasses. They guide us toward excellence while leaving room for the unexpected brilliance that emerges from chaos."*
