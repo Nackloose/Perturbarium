@@ -1,8 +1,8 @@
 # Quantum Stroboscopic Electron Stabilization: A Theoretical Framework for Non-Destructive Electron Measurement and Control via Entangled Pair Correlation
 
-**Authors:** N. Lisowski, B Matias
 **Version:** 1.0.0  
 **Date:** September 9, 2025  
+**Authors:** N. Lisowski, B. Matias
 
 ## Prologue: Theoretical Exploration and Limitations
 
