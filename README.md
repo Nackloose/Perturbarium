@@ -1,4 +1,4 @@
-# **Perturbarium**
+# 🌀 **Perturbarium**
 
 ![Perturbarium Title](title.png)
 
@@ -6,7 +6,7 @@
 
 > *"Welcome to the carnival of my mind, where thoughts flow like water and ideas explode like fireworks."* — [Where Am I?](where-am-i.md)
 
-**Version:** 5.0.0
+**Version:** 5.0.0  
 **Date:** August 29, 2025  
 **Authors:** N Lisowski
 
@@ -129,6 +129,7 @@ Ideas are spilled in Inkspill, sifted, then (sometimes) shaped into something wo
 - **Coding Best Practices**: Read [`guides/Coders-Guide-to-'Good'.md`](guides/Coders-Guide-to-'Good'.md)
 - **Evolutionary Systems**: Explore [`axia/Axia-Axiom.md`](axia/Axia-Axiom.md) for axiomatic criteria and [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for genetic evolution laws
 - **Software Implementation**: Study [`axia/Implementation-Axiom.md`](axia/Implementation-Axiom.md) for universal implementation principles
+- **Learning Systems**: Study [`axia/Exponential-Learning-Axiom.md`](axia/Exponential-Learning-Axiom.md) for accelerated knowledge acquisition principles
 
 ### I want to run something...
 - **Cipher Demo**: [`implementations/sinescramble/demo.py`](implementations/sinescramble/demo.py)
@@ -139,15 +140,37 @@ Ideas are spilled in Inkspill, sifted, then (sometimes) shaped into something wo
 ### I want to understand the theory...
 - **Fundamental Laws**: [`axia/Axia-Axiom.md`](axia/Axia-Axiom.md) for axiomatic criteria and [`axia/Evolution-Axiom.md`](axia/Evolution-Axiom.md) for genetic evolution axioms
 - **Implementation Principles**: [`axia/Implementation-Axiom.md`](axia/Implementation-Axiom.md) for software development laws
+- **Learning Systems**: [`axia/Exponential-Learning-Axiom.md`](axia/Exponential-Learning-Axiom.md) for accelerated knowledge acquisition
 - **Evolutionary Algorithms**: [`theory/xof-genetics.md`](theory/xof-genetics.md)
-- **Diff Formats**: [`theory/gdiff.md`](theory/gdiff.md)
-- **Identity Verification**: [`theory/Reverse-Publickey-Identity-Verification[RPIV].md`](theory/Reverse-Publickey-Identity-Verification[RPIV].md)
+- **Assembly Analysis**: [`theory/assembly-tracer.md`](theory/assembly-tracer.md)
+- **FFT Compression**: [`theory/fft_compression_concept.md`](theory/fft_compression_concept.md)
+- **Diff Formats**: [`specifications/gdiff.md`](specifications/gdiff.md)
+- **Identity Verification**: [`specifications/Reverse-Publickey-Identity-Verification[RPIV].md`](specifications/Reverse-Publickey-Identity-Verification[RPIV].md)
+- **AI Impact Analysis**: [`theory/ai-web-death.md`](theory/ai-web-death.md)
+- **Quantum Stabilization**: [`theory/quantum-stroboscopic-electron-stabilization.md`](theory/quantum-stroboscopic-electron-stabilization.md)
 
 ---
 
 ## 📚 Contents
 
 Perturbarium is organized by its core domains of inquiry, with Axia providing the foundational bedrock, and Inkspill serving as the creative workspace for all the raw, in-progress, and unfiltered material — the breeding ground for the next paradigm shift.
+
+### 🏗️ Project Relationships
+
+```
+Axia (foundational laws)
+    ↓ theoretical foundation
+Theory (mathematical frameworks)
+    ↓ applied principles
+Specifications (technical blueprints)
+    ↓ implementation guidance
+Implementations (working code)
+    ↓ practical validation
+Guides (best practices)
+    ↓ distilled wisdom
+Inkspill (creative exploration)
+    ↓ experimental ideas
+```
 
 ### 🧮 Axia (`axia/`)
 The foundational theoretical bedrock — mathematical principles and universal laws that underpin all other work.
@@ -158,13 +181,18 @@ The foundational theoretical bedrock — mathematical principles and universal l
 -   [`Evolution-Axiom.simple.md`](axia/Evolution-Axiom.simple.md) — The Simple Version: Plain English explanation of genetic evolution and self-evolving computers with real-world examples.
 -   [`Implementation-Axiom.md`](axia/Implementation-Axiom.md) — The Fundamental Laws of Software Implementation: Establishes the universal principles that govern successful software development and system architecture.
 -   [`Implementation-Axiom.simple.md`](axia/Implementation-Axiom.simple.md) — The Simple Version: Plain English explanation of implementation principles with real-world examples.
+-   [`Exponential-Learning-Axiom.md`](axia/Exponential-Learning-Axiom.md) — The Fundamental Laws of Exponential Learning: Establishes the universal principles that govern accelerated knowledge acquisition and skill development.
+-   [`Exponential-Learning-Axiom.simple.md`](axia/Exponential-Learning-Axiom.simple.md) — The Simple Version: Plain English explanation of exponential learning principles with real-world examples.
 
 ### 🧠 Theory (`theory/`)
 Schemas, design systems, and aesthetic principles.
 
--   [`gdiff.md`](theory/gdiff.md) — An opcodeized git diff specification providing machine-readable, granular file change representation beyond traditional line-based diffs.
--   [`Reverse-Publickey-Identity-Verification[RPIV].md`](theory/Reverse-Publickey-Identity-Verification[RPIV].md) — A protocol for inverted asymmetric identity where private keys are public identifiers and authenticity is established through decryption.
 -   [`xof-genetics.md`](theory/xof-genetics.md) — Genetic algorithms using cryptographic hash functions for evolutionary computation.
+-   [`ai-web-death.md`](theory/ai-web-death.md) — Analysis of AI's impact on web development and the evolution of digital ecosystems.
+-   [`assembly-tracer.md`](theory/assembly-tracer.md) — Assembly-level execution tracing and analysis framework for real-time performance analysis.
+-   [`assembly-tracer.spec.md`](theory/assembly-tracer.spec.md) — Detailed technical specification for assembly tracing system.
+-   [`fft_compression_concept.md`](theory/fft_compression_concept.md) — FFT-based data compression concepts and experimental framework.
+-   [`quantum-stroboscopic-electron-stabilization.md`](theory/quantum-stroboscopic-electron-stabilization.md) — Quantum stroboscopic electron stabilization theory and applications.
 
 ### 📋 Specifications (`specifications/`)
 Systems thinking, architecture, and resilience patterns.
@@ -173,11 +201,14 @@ Systems thinking, architecture, and resilience patterns.
 -   [`SineShift.md`](specifications/SineShift.md) & [`implementations/sineshift/`](implementations/sineshift/) — A framework for deterministic data permutation via sine-wave-based scrambling with three-column signal processing architecture.
 -   [`Licensee.md`](specifications/Licensee.md) & [`implementations/licensee/`](implementations/licensee/) — A multi-layered framework for secure software license key generation using RSA-3072 signatures and SineShift permutation.
 -   [`Instamaster.md`](specifications/Instamaster.md) & [`implementations/instamaster/`](implementations/instamaster/) — A signal-centric automated mastering pipeline with corrective EQ, multiband compression, and brickwall limiting.
+-   [`gdiff.md`](specifications/gdiff.md) — An opcodeized git diff specification providing machine-readable, granular file change representation beyond traditional line-based diffs.
+-   [`Reverse-Publickey-Identity-Verification[RPIV].md`](specifications/Reverse-Publickey-Identity-Verification[RPIV].md) — A protocol for inverted asymmetric identity where private keys are public identifiers and authenticity is established through decryption.
 
 ### 📖 Guides (`guides/`)
 Paradigms, best practices, and language-agnostic insights.
 
 -   [`Coders-Guide-to-'Good'.md`](guides/Coders-Guide-to-'Good'.md) — A comprehensive framework for timeless software craftsmanship with 10 fundamental tenets and actionable guidelines.
+-   [`monorepo-rulebook.md`](guides/monorepo-rulebook.md) — Best practices and patterns for monorepo architecture and management.
 
 ### 🔧 Implementations (`implementations/`)
 Working implementations of the theoretical concepts.
@@ -192,11 +223,6 @@ Working implementations of the theoretical concepts.
 ### 💭 Inkspill (`inkspill/`)
 The creative mess: drafts, notes, fragments, experiments, and half-formed thoughts — and the incubator for paradigm-shifting ideas.
 
--   [`assembly-tracer.md`](inkspill/assembly-tracer.md) — Assembly-level execution tracing and analysis framework
--   [`assembly-tracer.spec.md`](inkspill/assembly-tracer.spec.md) — Detailed specification for assembly tracing system
--   [`fft_compression_concept.md`](inkspill/fft_compression_concept.md) — FFT-based data compression concepts and experiments
--   [`react-mono.md`](inkspill/react-mono.md) — React monorepo architecture and patterns
--   [`slots.html`](inkspill/slots.html) — Interactive slots game implementation
 -   [`notes/`](inkspill/notes/) — Raw thoughts, outlines, observations, and experimental fragments
 
 ### 📄 Additional Files
@@ -213,23 +239,6 @@ Each section contains canonical writings, distilled principles, personal notes, 
 > *"Beware the folder labeled 'misc' — it is the Bermuda Triangle of thought, and sometimes the birthplace of revolutions."*
 
 ---
-
-## Project Relationships
-
-```
-Axia (foundational laws)
-    ↓ theoretical foundation
-Theory (mathematical frameworks)
-    ↓ applied principles
-Specifications (technical blueprints)
-    ↓ implementation guidance
-Implementations (working code)
-    ↓ practical validation
-Guides (best practices)
-    ↓ distilled wisdom
-Inkspill (creative exploration)
-    ↓ experimental ideas
-```
 
 Each implementation has corresponding documentation that explains the theory, design decisions, and usage patterns.
 
@@ -283,3 +292,23 @@ And "Centralized Dumping Ground For The Endless Crap I Think Of" didn't look as 
 For the complete set of rules, guidelines, and principles that govern the Perturbarium, see the [**Rulebook**](RULEBOOK.md). This document contains the foundational principles, coding standards, contribution guidelines, and philosophical framework that guide all work within this repository.
 
 > *"Rules are not cages, but compasses. They guide us toward excellence while leaving room for the unexpected brilliance that emerges from chaos."*
+
+---
+
+## 🔗 Related Resources
+
+- **[Navigation Guide](NAVIGATION.md)** - Comprehensive guide to finding what you need
+- **[Rulebook](RULEBOOK.md)** - Rules, guidelines, and principles that govern the Perturbarium
+- **[Where Am I?](where-am-i.md)** - Welcome to the Concoction of My Mind
+- **[Axia](axia/)** - Foundational theoretical axioms and mathematical principles
+- **[Theory](theory/)** - Mathematical frameworks and design systems
+- **[Specifications](specifications/)** - Technical blueprints and system designs
+- **[Implementations](implementations/)** - Working code and practical examples
+- **[Guides](guides/)** - Best practices and development wisdom
+- **[Inkspill](inkspill/)** - Creative workspace and experimental ideas
+
+---
+
+*"The tea is always ready, and there's always room for one more at the table."*
+
+**Welcome to the Perturbarium. May your thoughts flow like water, your ideas explode like fireworks, and your mind pulse with the rhythm of understanding.**

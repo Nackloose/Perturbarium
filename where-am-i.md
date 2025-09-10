@@ -1,6 +1,12 @@
-# Where Am I?
+# 🎭 Where Am I?
 
 ## Welcome to the Concoction of My Mind
+
+**Version:** 5.0.0  
+**Date:** August 29, 2025  
+**Authors:** N Lisowski
+
+---
 
 *Dear Wanderer,*
 __Welcome to the puturbarium.__
@@ -88,3 +94,23 @@ May your thoughts flow like water, your ideas explode like fireworks, and your m
 *P.S. If you find any typos, they're probably not typos at all, but new words trying to be born. If you find contradictions, they're probably both true. If you find nonsense, it might be the most profound thing you've ever read.*
 
 *P.P.S. The tea is always ready, and there's always room for one more at the table.*
+
+---
+
+## 🔗 Related Resources
+
+- **[Main README](README.md)** - Overview of the Perturbarium and its contents
+- **[Navigation Guide](NAVIGATION.md)** - Comprehensive guide to finding what you need
+- **[Rulebook](RULEBOOK.md)** - Rules, guidelines, and principles that govern the Perturbarium
+- **[Axia](axia/)** - Foundational theoretical axioms and mathematical principles
+- **[Theory](theory/)** - Mathematical frameworks and design systems
+- **[Specifications](specifications/)** - Technical blueprints and system designs
+- **[Implementations](implementations/)** - Working code and practical examples
+- **[Guides](guides/)** - Best practices and development wisdom
+- **[Inkspill](inkspill/)** - Creative workspace and experimental ideas
+
+---
+
+*"The tea is always ready, and there's always room for one more at the table."*
+
+**Welcome to the Perturbarium. May your thoughts flow like water, your ideas explode like fireworks, and your mind pulse with the rhythm of understanding.**

@@ -20,11 +20,11 @@ This is the most raw and unprocessed layer of Inkspill, containing:
 
 ## 🔗 Related Resources
 
-- **Assembly Tracing**: Check [`../assembly-tracer.md`](../assembly-tracer.md) for execution analysis
-- **React Architecture**: See [`../react-mono.md`](../react-mono.md) for monorepo patterns
-- **FFT Concepts**: Explore [`../fft_compression_concept.md`](../fft_compression_concept.md) for compression ideas
-- **Interactive Demo**: Visit [`../slots.html`](../slots.html) for the slots game
+- **Assembly Tracing**: Check [`../../theory/assembly-tracer.md`](../../theory/assembly-tracer.md) for execution analysis
+- **FFT Concepts**: Explore [`../../theory/fft_compression_concept.md`](../../theory/fft_compression_concept.md) for compression ideas
 - **Main Inkspill**: Return to [`../README.md`](../README.md) for overview
+- **Theory Papers**: Visit [`../../theory/`](../../theory/) for theoretical frameworks
+- **Specifications**: See [`../../specifications/`](../../specifications/) for technical blueprints
 
 ## 💡 Contributing
 

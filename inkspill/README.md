@@ -1,6 +1,10 @@
-# Inkspill
+# 💭 Inkspill
 
 > A loose collection of drafts, notes, fragments, and half-formed thoughts — the messy beginnings before ideas become Axia, and the primordial soup from which new paradigms may emerge.
+
+**Version:** 5.0.0  
+**Date:** August 29, 2025  
+**Authors:** N Lisowski
 
 ---
 
@@ -25,12 +29,7 @@ Some of these spills will evolve into structured truths or even new paradigms. S
 
 Current structure:
 
-- `notes/` — raw thoughts, outlines, observations  
-- `assembly-tracer.md` — full technical writeup: Assembly Tracer, a real-time application performance analysis system with micro-pool architecture and Bungee Wrapping trampoline features
-- `assembly-tracer.spec.md` — detailed technical specification for Assembly Tracer implementation
-- `blake3-genetics.md` — exploration of Blake3 hash function genetic algorithms
-- `fft_compression_concept.md` — FFT-based compression concept exploration
-- `react-mono.md` — React monorepo architecture rulebook and best practices for cross-platform native React deployables
+- `notes/` — raw thoughts, outlines, observations and experimental fragments
 
 _Naming and structure may be inconsistent — and that's fine. Some files are full documents, others are fragments or living drafts. Folders are for ongoing categories; files at the top level are often larger experiments or reference works in progress._
 
@@ -68,4 +67,24 @@ Inkspill serves as the creative chaos layer within the Perturbarium container. I
 
 ## License
 
-Copyright till I'm not to lazy to fix this. 
+Copyright till I'm not to lazy to fix this.
+
+---
+
+## 🔗 Related Resources
+
+- **[Main README](../README.md)** - Overview of the Perturbarium and its contents
+- **[Navigation Guide](../NAVIGATION.md)** - Comprehensive guide to finding what you need
+- **[Rulebook](../RULEBOOK.md)** - Rules, guidelines, and principles that govern the Perturbarium
+- **[Where Am I?](../where-am-i.md)** - Welcome to the Concoction of My Mind
+- **[Axia](../axia/)** - Foundational theoretical axioms and mathematical principles
+- **[Theory](../theory/)** - Mathematical frameworks and design systems
+- **[Specifications](../specifications/)** - Technical blueprints and system designs
+- **[Implementations](../implementations/)** - Working code and practical examples
+- **[Guides](../guides/)** - Best practices and development wisdom
+
+---
+
+*"The tea is always ready, and there's always room for one more at the table."*
+
+**Welcome to the Perturbarium. May your thoughts flow like water, your ideas explode like fireworks, and your mind pulse with the rhythm of understanding.** 

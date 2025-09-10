@@ -1,7 +1,38 @@
-# The Perturbarium Rulebook
+# 📜 The Perturbarium Rulebook
 ## Principles of Uncontained Innovation
 
 *"We're all mad here, but madness is just sanity wearing different clothes."*
+
+**Version:** 5.0.0  
+**Date:** August 29, 2025  
+**Authors:** N Lisowski
+
+---
+
+## 📋 Table of Contents
+
+- [Core Axioms](#core-axioms)
+  - [1. Chaos as a Feature, Not a Bug](#1-chaos-as-a-feature-not-a-bug)
+  - [2. Beauty in Imperfection](#2-beauty-in-imperfection)
+  - [3. Wisdom in Foolishness](#3-wisdom-in-foolishness)
+  - [4. Truth in Contradiction](#4-truth-in-contradiction)
+  - [5. Progress Through Perturbation](#5-progress-through-perturbation)
+- [Operational Principles](#operational-principles)
+  - [6. Seek Repetability, Not Approval](#6-seek-repetability-not-approval)
+  - [7. Abolish Research-Development Bifurcation](#7-abolish-research-development-bifurcation)
+  - [8. Wait for No One](#8-wait-for-no-one)
+  - [9. Foster Universal Collaboration](#9-foster-universal-collaboration)
+  - [10. Seek Truth Through Action](#10-seek-truth-through-action)
+- [Practical Guidelines](#practical-guidelines)
+  - [For Idea Generation](#for-idea-generation)
+  - [For Implementation](#for-implementation)
+  - [For Collaboration](#for-collaboration)
+  - [For Evaluation](#for-evaluation)
+- [The Perturbarium Manifesto](#the-perturbarium-manifesto)
+- [Emergency Procedures](#emergency-procedures)
+  - [When You're Stuck](#when-youre-stuck)
+  - [When You're Wrong](#when-youre-wrong)
+  - [When You're Right](#when-youre-right)
 
 ---
 
@@ -171,6 +202,20 @@ We are the Perturbarium. We are the chaos that creates order, the madness that b
 3. **Look for the next edge** - There's always another boundary to push
 4. **Help others succeed** - Your success should amplify others
 5. **Remember: Right is just wrong waiting to be discovered**
+
+---
+
+## 🔗 Related Resources
+
+- **[Main README](README.md)** - Overview of the Perturbarium and its contents
+- **[Navigation Guide](NAVIGATION.md)** - Comprehensive guide to finding what you need
+- **[Where Am I?](where-am-i.md)** - Welcome to the Concoction of My Mind
+- **[Axia](axia/)** - Foundational theoretical axioms and mathematical principles
+- **[Theory](theory/)** - Mathematical frameworks and design systems
+- **[Specifications](specifications/)** - Technical blueprints and system designs
+- **[Implementations](implementations/)** - Working code and practical examples
+- **[Guides](guides/)** - Best practices and development wisdom
+- **[Inkspill](inkspill/)** - Creative workspace and experimental ideas
 
 ---
 

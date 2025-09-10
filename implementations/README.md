@@ -2,6 +2,12 @@
 
 > *"Code is the ultimate truth-teller. It doesn't care about your theories or your intentions — it only cares about what works."*
 
+**Version:** 5.0.0  
+**Date:** August 29, 2025  
+**Authors:** N Lisowski
+
+---
+
 This directory contains working implementations of the theoretical concepts and specifications defined throughout the Perturbarium. These are complete, runnable systems that demonstrate the practical application of the ideas explored in the theory and specification documents, bringing the perturbations from concept to reality.
 
 ## 📋 Navigation
@@ -15,10 +21,10 @@ This directory contains working implementations of the theoretical concepts and 
 - **[`instamaster/`](instamaster/)** — Audio processing pipeline with automated mastering
 
 ### Algorithmic Systems
-- **[`xof-genetics/`](xof-genetics/)** — Genetic algorithm implementation using cryptographic hash functions
+- **[`xof-genetics/`](xof-genetics/)** — Genetic algorithm implementation using cryptographic hash functions with comprehensive testing
 
 ### AI and Automation
-- **[`claude-agents/`](claude-agents/)** — AI agent frameworks for various development tasks
+- **[`claude-agents/`](claude-agents/)** — AI agent frameworks organized by function (build, create, manage, optimize)
 
 ## 🎯 Purpose
 
@@ -93,3 +99,23 @@ When contributing implementations, ensure they include:
 Implementations represent the concrete manifestation of ideas within the Perturbarium container. They transform the theoretical perturbations from Axia and the experimental concepts from Inkspill into working systems that can be tested, validated, and built upon. They serve as the bridge between abstract concepts and practical reality, demonstrating that the perturbations cultivated in the container can indeed produce meaningful, functional systems.
 
 > *"Theory without implementation is speculation. Implementation without theory is hacking. Together, they create something greater than the sum of their parts."*
+
+---
+
+## 🔗 Related Resources
+
+- **[Main README](../README.md)** - Overview of the Perturbarium and its contents
+- **[Navigation Guide](../NAVIGATION.md)** - Comprehensive guide to finding what you need
+- **[Rulebook](../RULEBOOK.md)** - Rules, guidelines, and principles that govern the Perturbarium
+- **[Where Am I?](../where-am-i.md)** - Welcome to the Concoction of My Mind
+- **[Axia](../axia/)** - Foundational theoretical axioms and mathematical principles
+- **[Theory](../theory/)** - Mathematical frameworks and design systems
+- **[Specifications](../specifications/)** - Technical blueprints and system designs
+- **[Guides](../guides/)** - Best practices and development wisdom
+- **[Inkspill](../inkspill/)** - Creative workspace and experimental ideas
+
+---
+
+*"The tea is always ready, and there's always room for one more at the table."*
+
+**Welcome to the Perturbarium. May your thoughts flow like water, your ideas explode like fireworks, and your mind pulse with the rhythm of understanding.**
