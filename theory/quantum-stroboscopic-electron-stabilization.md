@@ -9,9 +9,8 @@
 **⚠️ IMPORTANT DISCLAIMER: This document represents a purely theoretical exploration of quantum measurement concepts and should be taken with a grain of salt.**
 
 tl;dr
-```
-this is an exploration at the edge of theoretical physics, where ideas are tested against the most fundamental laws of nature. Many of the concepts discussed may ultimately prove impossible or impractical upon deeper investigation, so all claims should be taken with appropriate skepticism. 
-```
+> this is an exploration at the edge of theoretical physics, where ideas are tested against the most fundamental laws of nature. Many of the concepts discussed may ultimately prove impossible or impractical upon deeper investigation, so all claims should be taken with appropriate skepticism. 
+
 
 This paper presents a speculative framework for achieving non-destructive electron measurement through quantum stroboscopic techniques. The ideas discussed are entirely theoretical, intended to probe the fundamental limits and challenges that would need to be addressed to make such a framework for quantum measurement and control feasible.
 
